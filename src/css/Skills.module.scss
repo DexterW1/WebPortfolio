@@ -1,0 +1,20 @@
+@import "./variables.scss";
+
+.container {
+  // height: 50svh;
+  // border: 1px solid red;
+}
+.headerContainer {
+  text-align: center;
+  margin-bottom: 8%;
+  h1 {
+    font-weight: 500;
+    span {
+      color: $primary-500;
+    }
+  }
+}
+.listContainer {
+  display: flex;
+  // flex-direction: column;
+}
