@@ -1,41 +1,25 @@
 {
   "project1": {
-    "title": "Stock Viewer",
+    "title": "Stock Hub",
     "summary": "Developed a dynamic stock market platform showcasing near real-time data for NASDAQ, S&P 500, and Dow Jones indices prominently on the main dashboard. The site provides users with live market news, trending symbols, and features a comprehensive widget for searching stocks, analyzing OHLCV data, and managing custom watchlists. Leveraging React for the frontend and Node.js for the backend, the platform seamlessly integrates two diverse APIs to ensure continuous data availability and persistence.",
     "skills": ["React", "Node.JS", "Express.JS ", "RestAPI", "CSS"],
     "link": "https://stock-page-client.vercel.app",
     "gitlink": "https://github.com/DexterW1/StockPageReactJS",
-    "imgSrc": "/images/stockwatcher.png",
-    "imgArr": [
-      "/images/stockwatcher.png",
-      "/images/stockwatcher2.png",
-      "/images/stockwatcher3.png"
-    ]
+    "imgSrc": "/images/stockwatcher.png"
   },
   "project2": {
     "title": "Spotify Wrap",
     "summary": "This project is a web application built with React that utilizes the Spotify API to provide users with insights into their music preferences. Users can view their favorite artists and tracks over different time frames and explore detailed audio analysis of their music. Additionally, the application offers personalized recommendations based on the user's listening habits.",
     "skills": ["C++"],
-    "gitlink": "https://github.com/DexterW1/SpotifyWrap",
-    "imgSrc": "/images/spotifywrap1.png",
-    "imgArr": [
-      "/images/spotifywrap1.png",
-      "/images/spotifywrap12.png",
-      "/images/spotifywrap3.png",
-      "/images/spotifywrap4.png"
-    ]
+    "link": "https://github.com/DexterW1/SpotifyWrap",
+    "imgSrc": "/images/spotifywrap1.png"
   },
   "project3": {
-    "title": "Traffic Accident Analytics",
+    "title": "Collison Insight",
     "summary": "Contributed to a group project analyzing 7.7 million traffic accidents in the U.S. from 2016-2022. Developed graphs highlighting accident-prone areas and visibility levels, aiding search features by location, and accident management. Also enhanced the interface with pagination for easier data navigation.",
     "skills": ["React", "Node.JS", "Express.JS", "RestAPI", "CSS"],
-    "gitlink": "https://github.com/DexterW1/Traffic-Accident-Analytics",
-    "imgSrc": "/images/traffic1.png",
-    "imgArr": [
-      "/images/traffic1.png",
-      "/images/traffic2.png",
-      "/images/traffic3.png"
-    ]
+    "link": "https://github.com/DexterW1/Traffic-Accident-Analytics",
+    "imgSrc": "/images/traffic1.png"
   },
   "project4": {
     "title": "Weatherio",
@@ -43,7 +27,6 @@
     "skills": ["HTML", "CSS", "JavaScript"],
     "link": "https://dexterw1.github.io/Weatherio/",
     "gitlink": "https://github.com/DexterW1/Weatherio",
-    "imgSrc": "/images/weatherio.png",
-    "imgArr": ["/images/weatherio.png", "/images/weatherio2.png"]
+    "imgSrc": "/images/weatherio.png"
   }
 }

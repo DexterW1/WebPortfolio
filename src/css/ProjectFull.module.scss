@@ -1,0 +1,53 @@
+@import "./variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  // height: auto;
+  // width: auto;
+  // border: 1px solid red;
+  padding: 5% 8%;
+  gap: 2rem;
+}
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.summaryContainer {
+}
+.metaContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  // border: 1px solid red;
+  a {
+    display: flex;
+    align-items: center;
+    // flex-wrap: wrap;
+    background-color: $surface-300;
+    border-radius: 40px;
+    gap: 5px;
+  }
+  .gitLinkStyle {
+    font-size: small;
+    color: "#FFFF";
+  }
+  p {
+    font-size: clamp(0.75rem, 0.568rem + 0.7767vw, 1.5rem);
+  }
+}
+.buttonStyle {
+  padding: 0.3rem 0.5rem;
+  color: $surface-100;
+  font-weight: 400;
+  border-radius: 40px;
+  background-color: $primary-600;
+}
+@media (min-width: $md) {
+}

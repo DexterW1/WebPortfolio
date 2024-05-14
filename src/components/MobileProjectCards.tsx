@@ -2,13 +2,12 @@
 import React from "react";
 import styles from "@/css/ComponentsCss/MobileProjectCards.module.scss";
 import Image from "next/image";
-import StockWatcher from "../../public/images/stockwatcher.png";
 type dataItemProp = {
   title: string;
   summary: string;
   skills: string[];
-  link: string;
-  gitlink?: string;
+  link?: string;
+  gitlink: string;
   imgSrc: string;
 };
 type dataProp = {
@@ -29,9 +28,7 @@ export default function MobileProjectCards({ data, index }: dataProp) {
       <div className={styles.textContainer}>
         <div className={styles.titleContainer}>
           <h2>0{index + 1}</h2>
-          <a href={data.link}>
-            <h1>{data.title}</h1>
-          </a>
+          <h1>{data.title}</h1>
         </div>
         <div className={styles.descriptionContainer}>
           <p>{data.summary}</p>
