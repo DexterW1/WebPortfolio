@@ -35,3 +35,12 @@
   background-color: $primary-500;
   // position: absolute;
 }
+
+@media (min-width: $md) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    // border: 1px solid green;
+    // width: 100%;
+  }
+}

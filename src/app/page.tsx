@@ -4,14 +4,14 @@ import styles from "./page.module.scss";
 import Introduction from "@/screens/Introduction";
 import Skills from "@/screens/Skills";
 import Projects from "@/screens/Projects";
-import Experience from "@/screens/Experience";
+import About from "@/screens/About";
 export default function Home() {
   return (
     <div className={styles.container}>
       <Introduction />
       <Skills />
       <Projects />
-      <Experience />
+      <About />
     </div>
   );
 }

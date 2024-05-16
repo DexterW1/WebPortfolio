@@ -73,8 +73,8 @@ export function NavbarFull() {
           className={styles.aButtonStyle}
           download
         >
-          <MdOutlineFileDownload />
           Resume
+          <MdOutlineFileDownload />
         </a>
       </div>
     </div>

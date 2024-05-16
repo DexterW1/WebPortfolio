@@ -3,16 +3,13 @@
 .container {
   display: flex;
   flex-direction: column;
-  // height: auto;
-  // width: auto;
-  // border: 1px solid red;
   padding: 5% 8%;
   gap: 2rem;
 }
 .title {
   display: flex;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
 }
 .imageContainer {
   display: flex;
@@ -20,6 +17,10 @@
   gap: 2rem;
 }
 .summaryContainer {
+  p {
+    color: $surface-600;
+    font-size: clamp(1rem, 0.8333rem + 0.3472vw, 1.25rem);
+  }
 }
 .metaContainer {
   display: flex;
@@ -29,17 +30,21 @@
   a {
     display: flex;
     align-items: center;
-    // flex-wrap: wrap;
+    align-self: flex-start;
     background-color: $surface-300;
+    padding-right: 10px;
     border-radius: 40px;
     gap: 5px;
+    p {
+      font-size: clamp(1rem, 0.9167rem + 0.1736vw, 1.125rem);
+    }
+    p:hover {
+      text-decoration: underline;
+    }
   }
   .gitLinkStyle {
-    font-size: small;
+    // font-size: small;
     color: "#FFFF";
-  }
-  p {
-    font-size: clamp(0.75rem, 0.568rem + 0.7767vw, 1.5rem);
   }
 }
 .buttonStyle {
@@ -49,5 +54,23 @@
   border-radius: 40px;
   background-color: $primary-600;
 }
-@media (min-width: $md) {
+@media (min-width: $lg) {
+  .container {
+    padding: 5% 10%;
+  }
+  .imageContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .summaryContainer {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    // text-align: center;
+    // border: 1px solid green;
+    p {
+      // text-align: center;
+      // width: 50%;
+    }
+  }
 }

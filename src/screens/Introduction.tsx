@@ -43,31 +43,59 @@ export default function Introduction() {
   }, []);
   return (
     <div className={styles.container}>
-      {/* Svg Image contianer */}
-      <div className={styles.imageContainer}>
-        <Image
-          sizes="(max-width:500px) 50vw, 100vw"
-          src={Coder}
-          alt="guy coding on laptop image"
-          style={{
-            width: "100%",
-            height: "auto",
-          }}
-        />
-      </div>
-      {/* Text container */}
-      <div className={styles.textContainer}>
-        <h2>Hi, my name is</h2>
-        <span className={styles.textAnimation}>
-          <motion.h1 style={{ marginRight: 4 }}>{displayText}</motion.h1>
-          <CursorBlinking />
-        </span>
-        <p>
-          {`I'm a recent Software Engineering grad from UCR, and I'm all
+      <div className={styles.flexContainer}>
+        <div className={styles.imageContainer}>
+          <Image
+            sizes="100vw"
+            width={0}
+            height={0}
+            src={Coder}
+            alt="guy coding on laptop image"
+            style={{
+              width: "100%",
+              height: "100%",
+            }}
+          />
+        </div>
+        {/* Text container */}
+        <div className={styles.textContainer}>
+          <h2>Hi, my name is</h2>
+          <span className={styles.textAnimation}>
+            <motion.h1 style={{ marginRight: 4 }}>{displayText}</motion.h1>
+            <CursorBlinking />
+          </span>
+          <p>
+            {`I'm a recent Software Engineering grad from UCR, and I'm all
           about creating cool, user-friendly tech. Join me as I explore the
           world of software and make tech both awesome and accessible!`}
-        </p>
+          </p>
+          <div className={styles.iconContainer2}>
+            <a
+              href="https://github.com/DexterW1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithub size={30} color="black" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/yiu-ming-wong-47274a2a9/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedinIn size={30} color="black" />
+            </a>
+            <a
+              href="mailto:dexterymwong@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IoMdMail size={30} color="black" />
+            </a>
+          </div>
+        </div>
       </div>
+      {/* Svg Image contianer */}
+
       {/* Button container */}
       <div className={styles.iconContainer}>
         <a

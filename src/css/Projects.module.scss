@@ -3,11 +3,11 @@
   height: 100%;
   // border: 1px solid red;
   overflow: hidden;
-  margin-bottom: 10%;
+  // margin-bottom: 10%;
 }
 .headerContainer {
   text-align: center;
-  margin-bottom: 15%;
+  // margin-bottom: 15%;
   h1 {
     font-weight: 500;
     span {
@@ -15,8 +15,23 @@
     }
   }
 }
-.projectContainer {
+.projectMobileContainer {
   display: flex;
   flex-direction: column;
   gap: 50px;
+}
+.projectFullContainer {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: $md) {
+  .projectMobileContainer {
+    display: none;
+  }
+  .projectFullContainer {
+    display: flex;
+    // border: 1px solid red;
+  }
 }
