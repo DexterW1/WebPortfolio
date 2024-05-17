@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaHtml5, FaCss3Alt, FaSass, FaNode } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io";
-import { SiTypescript } from "react-icons/si";
+import { SiTypescript, SiExpress } from "react-icons/si";
 import { FaReact, FaGithub } from "react-icons/fa";
 import { TbBrandReactNative, TbBrandNextjs } from "react-icons/tb";
 import { SiFramer } from "react-icons/si";
@@ -35,6 +35,7 @@ const iconComponents: iconProp = {
   Github: <FaGithub size={55} color="#000" />,
   Postgresql: <BiLogoPostgresql size={55} color="#31648c" />,
   Nextjs: <TbBrandNextjs size={55} color="#000" />,
+  Expressjs: <SiExpress size={55} color="#000" />,
 };
 export default function SkillsIcons() {
   const [activeIcon, setActiveIcon] = useState("");

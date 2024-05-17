@@ -95,6 +95,7 @@
     background-color: $primary-300;
     border-radius: 10px;
     font-size: clamp(1rem, 0.8125rem + 0.4688vw, 1.375rem);
+    box-shadow: 0 4px 15px 0 $primary-300;
     // border: 2px solid $surface-200;
   }
   .aButtonStyle:hover {

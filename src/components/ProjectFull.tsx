@@ -2,16 +2,16 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import styles from "@/css/ProjectFull.module.scss";
+import newTab from "../../public/images/newtab.png";
 import { Modal, ModalClose } from "@mui/joy";
-import { FaHtml5, FaCss3Alt, FaSass } from "react-icons/fa6";
+import { FaHtml5, FaCss3Alt } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io";
-import { SiTypescript } from "react-icons/si";
+import { SiTypescript, SiExpress } from "react-icons/si";
 import { FaReact, FaGithub } from "react-icons/fa";
-import { TbBrandReactNative, TbBrandNextjs } from "react-icons/tb";
+import { TbBrandReactNative } from "react-icons/tb";
 import { SiFramer } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
 import NodeIcon from "../../public/images/Node.js_logo.svg";
-import FirebaseIcon from "../../public/images/firebase.svg";
 import AwsIcon from "../../public/images/aws.svg";
 import FigmaIcon from "../../public/images/figma.svg";
 type projectProps = {
@@ -26,24 +26,49 @@ type projectProps = {
 type DataProps = {
   data: projectProps;
 };
-const iconComponents = {
-  Html: <FaHtml5 size={55} color="#dd4b26" />,
-  Css: <FaCss3Alt size={55} color="#2965f1" />,
-  Sass: <FaSass size={55} color="#cc6699" />,
-  Javascript: <IoLogoJavascript size={55} color="#f0db4f" />,
-  Typescript: <SiTypescript size={50} color="#007acc" />,
-  React: <FaReact size={55} color="#61dafb" />,
-  "React-Native": <TbBrandReactNative size={55} color="#61dafb" />,
-  Nodejs: <Image src={NodeIcon} width={55} height={55} alt="nodejs icon" />,
-  Firebase: (
-    <Image src={FirebaseIcon} width={55} height={55} alt="firebase icon" />
+const iconComponents: any = {
+  Html: <FaHtml5 size="100%" color="#dd4b26" />,
+  Css: <FaCss3Alt size="100%" color="#2965f1" />,
+  Javascript: <IoLogoJavascript size="100%" color="#f0db4f" />,
+  Typescript: <SiTypescript size="100%" color="#007acc" />,
+  React: <FaReact size="100%" color="#61dafb" />,
+  "React-Native": <TbBrandReactNative size="100%" color="#61dafb" />,
+  Nodejs: (
+    <Image
+      src={NodeIcon}
+      width={0}
+      height={0}
+      alt="nodejs icon"
+      sizes="100vw"
+      style={{
+        width: "100%",
+      }}
+    />
   ),
-  aws: <Image src={AwsIcon} width={55} height={40} alt="aws icon" />,
-  Framer: <SiFramer size={55} color="#00aaff" />,
-  Figma: <Image src={FigmaIcon} width={55} height={55} alt="figma icon" />,
-  Github: <FaGithub size={55} color="#000" />,
-  Postgresql: <BiLogoPostgresql size={55} color="#31648c" />,
-  Nextjs: <TbBrandNextjs size={55} color="#000" />,
+  Aws: (
+    <Image
+      src={AwsIcon}
+      width={0}
+      height={0}
+      alt="aws icon"
+      sizes="100vw"
+      style={{ width: "100vw" }}
+    />
+  ),
+  Framer: <SiFramer size={20} color="#00aaff" />,
+  Figma: (
+    <Image
+      src={FigmaIcon}
+      width={0}
+      height={0}
+      alt="figma icon"
+      sizes="100vw"
+      style={{ width: "100%" }}
+    />
+  ),
+  Postgresql: <BiLogoPostgresql size="100%" color="#31648c" />,
+  Expressjs: <SiExpress size="100%" color="#FFF" />,
+  RestApi: <p>REST</p>,
 };
 export default function ProjectFull({ data }: DataProps) {
   const [openModal, setOpenModal] = useState(false);
@@ -64,16 +89,26 @@ export default function ProjectFull({ data }: DataProps) {
       <div className={styles.summaryContainer}>
         <p>{data.summary}</p>
       </div>
+      <div className={styles.skillsContainer}>
+        <h2>Skills & Tools</h2>
+        <div className={styles.skillsFlex}>
+          {data.skills.map((item, index) => (
+            <div className={styles.iconStyle} key={index}>
+              {iconComponents[item]}
+            </div>
+          ))}
+        </div>
+      </div>
       <div className={styles.metaContainer}>
-        <a href={data.gitlink} target="_blank" rel="noopener noreferrer">
-          <p className={styles.buttonStyle}>Github</p>
-          <p className={styles.gitLinkStyle}>{data.gitlink}</p>
-        </a>
+        <button className={styles.githubButtonStyle}>
+          <FaGithub size={25} color="#FFF" />
+          View on Github
+        </button>
         {data.link && (
-          <a href={data.link} target="_blank" rel="noopener noreferrer">
-            <p className={styles.buttonStyle}>Source</p>
-            <p className={styles.gitLinkStyle}>{data?.link}</p>
-          </a>
+          <button className={styles.checkButtonStyle}>
+            Check it out!{" "}
+            <Image src={newTab} width={15} height={15} alt="new tab icon" />
+          </button>
         )}
       </div>
       <div className={styles.imageContainer}>
