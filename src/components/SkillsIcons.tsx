@@ -53,7 +53,6 @@ export default function SkillsIcons() {
           <motion.div
             initial={{ opacity: 1, clipPath: "circle(0%)" }}
             animate={{
-              // opacity: activeIcon === item[0] ? 0 : 1,
               clipPath: activeIcon === item[0] ? "circle(0%)" : "circle(80%)",
             }}
             transition={{ duration: 0.3 }}

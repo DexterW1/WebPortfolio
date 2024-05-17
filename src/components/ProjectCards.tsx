@@ -43,7 +43,7 @@ export default function ProjectCards({ data, index, hrefLink }: dataProp) {
         <h1>0{index + 1}</h1>
         <div className={styles.titleContainer}>
           <h2>{data.title}</h2>
-          <Image src={newTab} width={15} height={15} alt="figma icon" />
+          <Image src={newTab} width={15} height={15} alt="new tab icon" />
         </div>
         <div className={styles.descriptionContainer}>
           <p>{data.summary}</p>

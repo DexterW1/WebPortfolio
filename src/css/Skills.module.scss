@@ -4,8 +4,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 70svh;
+  // justify-content: center;
+  height: 100svh;
+  padding: 3%;
   // border: 1px solid red;
 }
 .headerContainer {
@@ -20,5 +21,8 @@
 }
 .listContainer {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
   // flex-direction: column;
 }

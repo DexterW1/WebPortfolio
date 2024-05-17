@@ -2,7 +2,18 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import styles from "@/css/ProjectFull.module.scss";
-import { Modal, ModalClose, Sheet } from "@mui/joy";
+import { Modal, ModalClose } from "@mui/joy";
+import { FaHtml5, FaCss3Alt, FaSass } from "react-icons/fa6";
+import { IoLogoJavascript } from "react-icons/io";
+import { SiTypescript } from "react-icons/si";
+import { FaReact, FaGithub } from "react-icons/fa";
+import { TbBrandReactNative, TbBrandNextjs } from "react-icons/tb";
+import { SiFramer } from "react-icons/si";
+import { BiLogoPostgresql } from "react-icons/bi";
+import NodeIcon from "../../public/images/Node.js_logo.svg";
+import FirebaseIcon from "../../public/images/firebase.svg";
+import AwsIcon from "../../public/images/aws.svg";
+import FigmaIcon from "../../public/images/figma.svg";
 type projectProps = {
   title: string;
   summary: string;
@@ -15,6 +26,25 @@ type projectProps = {
 type DataProps = {
   data: projectProps;
 };
+const iconComponents = {
+  Html: <FaHtml5 size={55} color="#dd4b26" />,
+  Css: <FaCss3Alt size={55} color="#2965f1" />,
+  Sass: <FaSass size={55} color="#cc6699" />,
+  Javascript: <IoLogoJavascript size={55} color="#f0db4f" />,
+  Typescript: <SiTypescript size={50} color="#007acc" />,
+  React: <FaReact size={55} color="#61dafb" />,
+  "React-Native": <TbBrandReactNative size={55} color="#61dafb" />,
+  Nodejs: <Image src={NodeIcon} width={55} height={55} alt="nodejs icon" />,
+  Firebase: (
+    <Image src={FirebaseIcon} width={55} height={55} alt="firebase icon" />
+  ),
+  aws: <Image src={AwsIcon} width={55} height={40} alt="aws icon" />,
+  Framer: <SiFramer size={55} color="#00aaff" />,
+  Figma: <Image src={FigmaIcon} width={55} height={55} alt="figma icon" />,
+  Github: <FaGithub size={55} color="#000" />,
+  Postgresql: <BiLogoPostgresql size={55} color="#31648c" />,
+  Nextjs: <TbBrandNextjs size={55} color="#000" />,
+};
 export default function ProjectFull({ data }: DataProps) {
   const [openModal, setOpenModal] = useState(false);
   const [imageSelected, setImageSelected] = useState("");
@@ -24,7 +54,7 @@ export default function ProjectFull({ data }: DataProps) {
   };
   const handButtonClose = () => {
     setOpenModal(false);
-    setImageSelected(false);
+    setImageSelected("");
   };
   return (
     <div className={styles.container}>
