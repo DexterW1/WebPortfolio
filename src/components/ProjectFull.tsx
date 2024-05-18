@@ -7,7 +7,7 @@ import { Modal, ModalClose } from "@mui/joy";
 import { FaHtml5, FaCss3Alt } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io";
 import { SiTypescript, SiExpress } from "react-icons/si";
-import { FaReact, FaGithub } from "react-icons/fa";
+import { FaReact, FaGithub, FaBootstrap } from "react-icons/fa";
 import { TbBrandReactNative } from "react-icons/tb";
 import { SiFramer } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
@@ -69,6 +69,7 @@ const iconComponents: any = {
   Postgresql: <BiLogoPostgresql size="100%" color="#31648c" />,
   Expressjs: <SiExpress size="100%" color="#FFF" />,
   RestApi: <p>REST</p>,
+  Bootstrap: <FaBootstrap size="100%" color="#7f0ff3" />,
 };
 export default function ProjectFull({ data }: DataProps) {
   const [openModal, setOpenModal] = useState(false);
@@ -100,15 +101,25 @@ export default function ProjectFull({ data }: DataProps) {
         </div>
       </div>
       <div className={styles.metaContainer}>
-        <button className={styles.githubButtonStyle}>
+        <a
+          href={data.gitlink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.githubButtonStyle}
+        >
           <FaGithub size={25} color="#FFF" />
           View on Github
-        </button>
+        </a>
         {data.link && (
-          <button className={styles.checkButtonStyle}>
+          <a
+            href={data.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.checkButtonStyle}
+          >
             Check it out!{" "}
             <Image src={newTab} width={15} height={15} alt="new tab icon" />
-          </button>
+          </a>
         )}
       </div>
       <div className={styles.imageContainer}>

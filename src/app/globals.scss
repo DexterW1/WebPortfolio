@@ -4,6 +4,22 @@
   padding: 0;
   margin: 0;
 }
+/* background of the scrollbar except button or resizer */
+body::-webkit-scrollbar-track {
+  background-color: $surface-100;
+}
+
+/* scrollbar itself */
+body::-webkit-scrollbar-thumb {
+  background-color: #babac0;
+  border-radius: 16px;
+  border: 4px solid $surface-100;
+}
+
+/* set button(top and bottom of the scrollbar) */
+body::-webkit-scrollbar-button {
+  display: none;
+}
 a {
   color: inherit;
   text-decoration: none;

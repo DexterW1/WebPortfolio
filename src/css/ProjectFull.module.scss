@@ -49,7 +49,7 @@
   flex-direction: row;
   align-self: flex-start;
   gap: 1rem;
-  button {
+  a {
     // border: 1px solid red;
     font-size: clamp(1rem, 0.9375rem + 0.25vw, 1.125rem);
     cursor: pointer;
@@ -74,7 +74,9 @@
 }
 @media (min-width: $lg) {
   .container {
-    padding: 5% 10%;
+    // justify-content: center;
+    // align-items: center;
+    padding: 5% 15%;
   }
   .imageContainer {
     display: grid;
@@ -87,10 +89,8 @@
     p {
     }
   }
-}
-@media (min-width: $lg) {
   .metaContainer {
-    button {
+    a {
       padding: 1rem;
     }
   }
