@@ -2,6 +2,7 @@
 import React from "react";
 import styles from "@/css/ComponentsCss/MobileProjectCards.module.scss";
 import Image from "next/image";
+import newTab from "../../public/images/newtab.png";
 type dataItemProp = {
   title: string;
   summary: string;
@@ -28,7 +29,10 @@ export default function MobileProjectCards({ data, index }: dataProp) {
       <div className={styles.textContainer}>
         <div className={styles.titleContainer}>
           <h2>0{index + 1}</h2>
-          <h1>{data.title}</h1>
+          <h1>
+            {data.title}{" "}
+            <Image src={newTab} alt="new-tab logo" width={18} height={18} />
+          </h1>
         </div>
         <div className={styles.descriptionContainer}>
           <p>{data.summary}</p>
