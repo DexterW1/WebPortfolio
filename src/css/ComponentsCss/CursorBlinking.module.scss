@@ -1,6 +1,8 @@
+@import "../variables.scss";
 .blinkStyle {
   display: inline-block;
   background: #fff;
-  height: 30px;
+  height: 33px;
+  border-radius: 20px;
   width: 3px;
 }

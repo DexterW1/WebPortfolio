@@ -46,11 +46,18 @@
     "imgSrc": "/images/weatherio.png",
     "imgArr": ["/images/weatherio.png", "/images/weatherio2.png"]
   },
-  "Project5": {
+  "project5": {
     "title": "Nutripair",
     "summary": "Nutripair is the current company I am working for, our mission is to help people find the best food for their dietary needs while simultaneously helping local restauraunts increase revenue & attract diverse customers",
-    "skills": ["React-Native", "Typescript", "Aws", "Figma"],
-    "subskills": ["S3", "Gateway", "Rds"],
+    "skills": [
+      "React-Native",
+      "Typescript",
+      "S3",
+      "Figma",
+      "Cognito",
+      "Rds",
+      "Gateway"
+    ],
     "link": "https://dexterw1.github.io/Weatherio/",
     "gitlink": "https://github.com/DexterW1/Weatherio",
     "imgSrc": "/images/weatherio.png",

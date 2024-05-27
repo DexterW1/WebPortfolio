@@ -7,9 +7,9 @@ import { motion, useMotionValue, animate, useTransform } from "framer-motion";
 import CursorBlinking from "@/components/CursorBlinking";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
-
+import WaterDropGrid from "@/components/WaterDropGrid";
 export default function Introduction() {
-  const names = ["Yiu Ming Wong", "Dexter Wong"];
+  const names = ["Front-End Developer", "Fullstack Developer"];
   const namesIndex = useMotionValue(0);
   const baseName = useTransform(namesIndex, (latest) => names[latest] || "");
   const count = useMotionValue(0);
@@ -19,7 +19,7 @@ export default function Introduction() {
   );
   const updatedThisRound = useMotionValue(true);
   useEffect(() => {
-    const controls = animate(count, 15, {
+    const controls = animate(count, 25, {
       type: "tween",
       duration: 2,
       ease: "easeIn",
@@ -65,9 +65,7 @@ export default function Introduction() {
             <CursorBlinking />
           </span>
           <p>
-            {`I'm a recent Software Engineering grad from UCR, and I'm all
-          about creating cool, user-friendly tech. Join me as I explore the
-          world of software and make tech both awesome and accessible!`}
+            {`I'm a recent Software Engineering grad from UCR, passionate about developing user-friendly technology. Join me as I dive into the world of software and strive to make tech both innovative and accessible!`}
           </p>
           <div className={styles.iconContainer2}>
             <a
@@ -119,6 +117,7 @@ export default function Introduction() {
         >
           <IoMdMail size={30} color="black" />
         </a>
+        <WaterDropGrid />
       </div>
     </div>
   );

@@ -1,0 +1,48 @@
+.relativeGrid {
+  position: relative;
+  display: grid;
+  place-content: center;
+  // background-color: #1a202c; /* bg-slate-900 */
+}
+
+.dotGrid {
+  display: grid;
+  width: fit-content;
+}
+
+.dotWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: crosshair;
+  border-radius: 9999px;
+  padding: 0.5rem; /* p-2 */
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+
+  &:hover {
+    background-color: #2d3748; /* hover:bg-slate-600 */
+  }
+}
+
+.dotPoint {
+  height: 0.5rem; /* h-2 */
+  width: 0.5rem; /* w-2 */
+  border-radius: 9999px; /* rounded-full */
+  background: linear-gradient(
+    to bottom,
+    #2d3748,
+    #718096
+  ); /* from-slate-700 to-slate-400 */
+  opacity: 0.5;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .dotWrapper:hover & {
+    background: linear-gradient(
+      to bottom,
+      #5a67d8,
+      #ffffff
+    ); /* group-hover:from-indigo-600 group-hover:to-white */
+  }
+}

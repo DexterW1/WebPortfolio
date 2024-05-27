@@ -52,7 +52,7 @@ const iconComponents: any = {
       height={0}
       alt="aws icon"
       sizes="100vw"
-      style={{ width: "100vw" }}
+      style={{ width: "100%", height: "100%" }}
     />
   ),
   Framer: <SiFramer size={20} color="#00aaff" />,
