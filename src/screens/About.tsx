@@ -2,6 +2,7 @@
 import React from "react";
 import styles from "@/css/About.module.scss";
 import Image from "next/image";
+import WaterDropGrid from "@/components/WaterDropGrid";
 export default function About() {
   return (
     <div className={styles.container}>

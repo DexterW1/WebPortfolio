@@ -90,6 +90,9 @@ export default function Introduction() {
               <IoMdMail size={30} color="black" />
             </a>
           </div>
+          <div className={styles.waterContainer}>
+            <WaterDropGrid />
+          </div>
         </div>
       </div>
       {/* Svg Image contianer */}
@@ -117,7 +120,6 @@ export default function Introduction() {
         >
           <IoMdMail size={30} color="black" />
         </a>
-        <WaterDropGrid />
       </div>
     </div>
   );
