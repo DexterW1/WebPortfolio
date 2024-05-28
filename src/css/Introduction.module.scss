@@ -147,16 +147,19 @@
 }
 
 @media (min-width: $xl) {
+  .waterContainer {
+    left: 5%;
+  }
   .container {
     padding: 0 10%;
   }
   .flexContainer {
-    border: 2px solid blue;
   }
   .imageContainer {
     // border: 1px solid red;
     // width: 50%;
     flex-grow: 0;
+    width: 75%;
   }
   .textContainer {
     flex-grow: 0;
