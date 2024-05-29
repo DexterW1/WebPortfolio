@@ -10,27 +10,31 @@ const WaterDropGrid = () => {
     </div>
   );
 };
-let GRID_WIDTH = 20;
-let GRID_HEIGHT = 15;
+let GRID_WIDTH = 0;
+let GRID_HEIGHT = 0;
 
 const DotGrid = () => {
   const size = useWindowSize();
-
   useEffect(() => {
-    if (size.width > 1280) {
-      GRID_HEIGHT = 20;
-      GRID_WIDTH = 25;
-      if (size.height > 900) {
-        GRID_WIDTH = 30;
+    if (size.height && size.width) {
+      console.log("height" + size.height + "width" + size.width);
+      if (size.width > 1280) {
+        GRID_HEIGHT = 20;
+        GRID_WIDTH = 25;
+        if (size.height > 800) {
+          GRID_WIDTH = 30;
+        }
+      } else {
+        GRID_WIDTH = 20;
+        GRID_HEIGHT = 15;
       }
-    } else {
-      GRID_WIDTH = 20;
-      GRID_HEIGHT = 15;
     }
+
+    console.log("Width:", GRID_WIDTH);
+    console.log("Height:", GRID_HEIGHT);
   }, [size.width, size.height]);
   const handleDotClick = (e: any) => {
     const index = e.target.dataset.index;
-    console.log(index);
     anime({
       targets: ".dotSelector",
       scale: [
@@ -51,28 +55,32 @@ const DotGrid = () => {
       }),
     });
   };
+  if (!size.width && !size.height) {
+    return null;
+  }
 
   const dots = [];
   let index = 0;
-
-  for (let i = 0; i < GRID_WIDTH; i++) {
-    for (let j = 0; j < GRID_HEIGHT; j++) {
-      dots.push(
-        <div
-          className={styles.dotWrapper}
-          data-index={index}
-          key={`${i}-${j}`}
-          onClick={handleDotClick}
-        >
+  if (GRID_HEIGHT != 0 && GRID_WIDTH != 0) {
+    for (let i = 0; i < GRID_WIDTH; i++) {
+      for (let j = 0; j < GRID_HEIGHT; j++) {
+        dots.push(
           <div
-            className={`${styles.dotPoint} dotSelector`}
-            onClick={handleDotClick}
+            className={styles.dotWrapper}
             data-index={index}
-          />
-        </div>
-      );
-      index++;
-      // console.log("This is index:", index);
+            key={`${i}-${j}`}
+            onClick={handleDotClick}
+          >
+            <div
+              className={`${styles.dotPoint} dotSelector`}
+              onClick={handleDotClick}
+              data-index={index}
+            />
+          </div>
+        );
+        index++;
+        // console.log("This is index:", index);
+      }
     }
   }
 
