@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "@/css/Introduction.module.scss";
 import Coder from "../../public/images/coder.svg";
 import Image from "next/image";
@@ -7,9 +7,13 @@ import { motion, useMotionValue, animate, useTransform } from "framer-motion";
 import CursorBlinking from "@/components/CursorBlinking";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
+import { useWindowSize } from "@uidotdev/usehooks";
 import WaterDropGrid from "@/components/WaterDropGrid";
+
 export default function Introduction() {
-  const names = ["Front-End Developer", "Fullstack Developer"];
+  const size = useWindowSize();
+  const [topSize, setTopSize] = useState("20%");
+  const names = ["Front-End Developer", "Full-stack Developer"];
   const namesIndex = useMotionValue(0);
   const baseName = useTransform(namesIndex, (latest) => names[latest] || "");
   const count = useMotionValue(0);
@@ -41,6 +45,23 @@ export default function Introduction() {
     });
     return controls.stop;
   }, []);
+  useEffect(() => {
+    if (size.height) {
+      if (size.height < 800) {
+        if (size.width > 1280) {
+          setTopSize("10%");
+        } else {
+          setTopSize("20%");
+        }
+      } else {
+        if (size.width > 1280) {
+          setTopSize("20%");
+        } else {
+          setTopSize("30%");
+        }
+      }
+    }
+  }, [size.height, size.width]);
   return (
     <div className={styles.container}>
       <div className={styles.flexContainer}>
@@ -90,7 +111,7 @@ export default function Introduction() {
               <IoMdMail size={30} color="black" />
             </a>
           </div>
-          <div className={styles.waterContainer}>
+          <div style={{ top: topSize }} className={styles.waterContainer}>
             <WaterDropGrid />
           </div>
         </div>

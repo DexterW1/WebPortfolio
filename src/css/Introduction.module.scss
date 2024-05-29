@@ -1,6 +1,6 @@
 @import "./variables.scss";
 .container {
-  position: relative;
+  // position: relative;
   z-index: 0;
   display: flex;
   flex-direction: column;
@@ -10,9 +10,11 @@
   padding: 0 5%;
 }
 .flexContainer {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  // border: 1px solid blue;
 }
 .imageContainer {
   z-index: 5;
@@ -23,7 +25,11 @@
 .waterContainer {
   display: none;
   position: absolute;
+  top: 0;
+  // right: 0;
   z-index: -5;
+  // border: 1px solid red;
+  // align-self: flex-start;/
 }
 .textContainer {
   z-index: 5;
@@ -101,8 +107,8 @@
 @media (min-width: $md) {
   .waterContainer {
     display: flex;
-    top: 20%;
-    left: 2%;
+    flex-direction: row;
+    left: -3%;
   }
   .container {
     padding: 0 5%;
@@ -148,10 +154,10 @@
 
 @media (min-width: $xl) {
   .waterContainer {
-    left: 5%;
+    // left: 5%;
   }
   .container {
-    padding: 0 10%;
+    padding: 0 15%;
   }
   .flexContainer {
   }

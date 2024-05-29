@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import anime from "animejs";
 import styles from "@/css/ComponentsCss/WaterDropGrid.module.scss";
-
+import { useWindowSize } from "@uidotdev/usehooks";
 const WaterDropGrid = () => {
   return (
     <div className={styles.relativeGrid}>
@@ -10,43 +10,24 @@ const WaterDropGrid = () => {
     </div>
   );
 };
-let GRID_WIDTH = 25;
-let GRID_HEIGHT = 20;
+let GRID_WIDTH = 20;
+let GRID_HEIGHT = 15;
 
 const DotGrid = () => {
-  // useEffect(() => {
-  //   const updateGridDimensions = () => {
-  //     const vw = Math.max(
-  //       document.documentElement.clientWidth || 0,
-  //       window.innerWidth || 0
-  //     );
+  const size = useWindowSize();
 
-  //     // Adjust dimensions based on viewport size
-  //     if (vw < 768) {
-  //       GRID_WIDTH = 10;
-  //       GRID_HEIGHT = 5;
-  //     } else if (vw < 1024) {
-  //       GRID_WIDTH = 15;
-  //       GRID_HEIGHT = 10;
-  //     } else {
-  //       GRID_WIDTH = 20;
-  //       GRID_HEIGHT = 15;
-  //     }
-
-  //     // Apply the new dimensions to the grid
-  //     const gridElement = document.querySelector(`.${styles.dotGrid}`);
-  //     if (gridElement) {
-  //       gridElement.style.gridTemplateColumns = `repeat(${GRID_WIDTH}, 1fr)`;
-  //     }
-  //   };
-
-  //   // Call updateGridDimensions on initial render and when viewport size changes
-  //   updateGridDimensions();
-  //   window.addEventListener("resize", updateGridDimensions);
-  //   return () => {
-  //     window.removeEventListener("resize", updateGridDimensions);
-  //   };
-  // }, []);
+  useEffect(() => {
+    if (size.width > 1280) {
+      GRID_HEIGHT = 20;
+      GRID_WIDTH = 25;
+      if (size.height > 900) {
+        GRID_WIDTH = 30;
+      }
+    } else {
+      GRID_WIDTH = 20;
+      GRID_HEIGHT = 15;
+    }
+  }, [size.width, size.height]);
   const handleDotClick = (e: any) => {
     const index = e.target.dataset.index;
     console.log(index);
