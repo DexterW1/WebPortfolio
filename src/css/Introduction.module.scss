@@ -36,14 +36,18 @@
   margin-bottom: 3%;
   width: 100%;
   // border: 1px solid blue;
-  h2 {
-    color: $primary-600;
+  h3 {
+    // color: $primary-600;
     margin-bottom: 2%;
+    span {
+      color: $primary-600;
+      font-size: 2rem;
+    }
   }
 
   .textAnimation {
     // margin: 0 5%;
-    margin-left: 5%;
+    // margin-left: 5%;
     // margin-right: 5%;
     h1 {
       display: inline;

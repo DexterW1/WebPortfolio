@@ -13,7 +13,7 @@ import WaterDropGrid from "@/components/WaterDropGrid";
 export default function Introduction() {
   const size = useWindowSize();
   const [topSize, setTopSize] = useState("20%");
-  const names = ["Front-End Developer", "Full-stack Developer"];
+  const names = ["Front-end Developer", "Full-stack Developer"];
   const namesIndex = useMotionValue(0);
   const baseName = useTransform(namesIndex, (latest) => names[latest] || "");
   const count = useMotionValue(0);
@@ -80,9 +80,12 @@ export default function Introduction() {
         </div>
         {/* Text container */}
         <div className={styles.textContainer}>
-          <h2>Hi, my name is</h2>
+          <h3>
+            Hi, my name is <span>Yiu Ming.</span>
+          </h3>
+          <h3 style={{ marginLeft: "5%" }}>I&apos;m a</h3>
           <span className={styles.textAnimation}>
-            <motion.h1 style={{ marginRight: 4 }}>{displayText}</motion.h1>
+            <motion.h1>{displayText}</motion.h1>
             <CursorBlinking />
           </span>
           <p>
