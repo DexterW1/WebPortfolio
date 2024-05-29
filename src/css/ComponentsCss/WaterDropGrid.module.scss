@@ -1,3 +1,4 @@
+@import "../variables.scss";
 .relativeGrid {
   position: relative;
   display: grid;
@@ -32,12 +33,16 @@
   border-radius: 9999px; /* rounded-full */
   background: linear-gradient(
     to bottom,
-    #2d3748,
-    #718096
+    $surface-200,
+    $primary-400
   ); /* from-slate-700 to-slate-400 */
   opacity: 0.5;
   transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-
+  &:hover {
+    background: $primary-500;
+    opacity: 1;
+    // background: linear-gradient(to bottom, #2d3748, $primary-600);
+  }
   .dotWrapper:hover & {
     background: linear-gradient(
       to bottom,
