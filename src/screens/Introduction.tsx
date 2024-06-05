@@ -49,7 +49,7 @@ export default function Introduction() {
     if (size.height) {
       if (size.height < 800) {
         if (size.width > 1280) {
-          setTopSize("10%");
+          setTopSize("15%");
         } else {
           setTopSize("20%");
         }
@@ -57,7 +57,7 @@ export default function Introduction() {
         if (size.width > 1280) {
           setTopSize("20%");
         } else {
-          setTopSize("30%");
+          setTopSize("32%");
         }
       }
     }
@@ -80,10 +80,11 @@ export default function Introduction() {
         </div>
         {/* Text container */}
         <div className={styles.textContainer}>
+          <h3>hi, my name is</h3>
           <h3>
-            Hi, my name is <span>Yiu Ming.</span>
+            <span>Yiu Ming Wong</span>
           </h3>
-          <h3 style={{ marginLeft: "5%" }}>I&apos;m a</h3>
+          <h2>I&apos;m a...</h2>
           <span className={styles.textAnimation}>
             <motion.h1>{displayText}</motion.h1>
             <CursorBlinking />

@@ -36,7 +36,7 @@
     $surface-200,
     $primary-400
   ); /* from-slate-700 to-slate-400 */
-  opacity: 0.5;
+  opacity: 0.4;
   transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
     background: $primary-500;
