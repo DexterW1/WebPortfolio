@@ -2,7 +2,7 @@
 import React from "react";
 import styles from "@/css/About.module.scss";
 import Image from "next/image";
-import WaterDropGrid from "@/components/WaterDropGrid";
+import Coder from "../../public/images/coder.svg";
 export default function About() {
   return (
     <div className={styles.container}>
@@ -10,10 +10,17 @@ export default function About() {
         <h1>
           About <span>Me</span>
         </h1>
+        {/* <div className={styles.divider} /> */}
       </div>
       <div className={styles.contentContainer}>
         <div className={styles.imageContainer}>
-          <div className={styles.imageStyle}></div>
+          <Image
+            src={Coder}
+            alt="profile img"
+            width={0}
+            height={0}
+            sizes="100vw"
+          />
         </div>
         <div className={styles.textContainer}>
           <p>

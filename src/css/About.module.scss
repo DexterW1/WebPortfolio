@@ -3,18 +3,26 @@
   min-height: 100svh;
   height: 100%;
   padding: 5% 5%;
-  border: 1px solid red;
+  // border: 1px solid red;
   overflow: hidden;
 }
 .headerContainer {
-  text-align: center;
+  text-align: left;
   margin-bottom: 10%;
   h1 {
     font-weight: 500;
     span {
       color: $primary-400;
+      // font-style: italic;z
+      // font-size: 2.5rem;
     }
   }
+}
+.imageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10%;
 }
 .contentContainer {
   display: flex;
@@ -29,5 +37,27 @@
   p {
     font-size: clamp(1.1rem, 0.9167rem + 0.3819vw, 1.375rem);
     font-weight: 300;
+  }
+}
+
+@media (min-width: $md) {
+  .contentContainer {
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+  .textContainer {
+    max-width: 50%;
+  }
+}
+@media (min-width: $xl) {
+  .container {
+    padding: 5% 15%;
+  }
+  .contentContainer {
+    gap: 2rem;
+    .textContainer {
+      border: 1px solid pink;
+    }
   }
 }

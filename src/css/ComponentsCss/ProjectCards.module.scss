@@ -5,19 +5,19 @@
   // border: 1px solid red;
   justify-content: space-between;
   align-items: center;
-  padding: 2.5% 10%;
-  gap: 10rem;
+  // padding: 0 10%;
+  gap: 5rem;
 }
 
 .imageContainer {
-  width: 100%;
+  width: 50%;
   height: auto;
 }
 .textContainer {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  width: 100%;
+  width: 50%;
   // border: 1px solid blue;
   padding: 1rem;
   border-radius: 5px;
