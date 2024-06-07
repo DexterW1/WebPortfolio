@@ -153,6 +153,12 @@
     h2 {
       font-size: clamp(1.5rem, 1.3333rem + 0.3472vw, 1.75rem);
     }
+    h3 {
+      font-size: clamp(1.625rem, -0.7339rem + 2.9032vw, 2.75rem);
+      span {
+        font-size: clamp(1.625rem, -0.7339rem + 2.9032vw, 2.75rem);
+      }
+    }
   }
   .iconContainer {
     display: none;
@@ -166,6 +172,8 @@
   .waterContainer {
     // left: 5%;
   }
+  .textContainer {
+  }
   .container {
     padding: 0 15%;
   }
@@ -173,10 +181,6 @@
   //   border: 1px solid blue;
   // }
   .imageContainer {
-    // border: 1px solid red;
-    // padding: 2rem 10rem;
-    // width: 50%;
-    // flex-grow: 0;
     width: 70%;
   }
   .textContainer {

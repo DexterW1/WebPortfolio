@@ -90,7 +90,7 @@ export default function Introduction() {
             <CursorBlinking />
           </span>
           <p>
-            {`I'm a recent Software Engineering grad from UCR, passionate about developing user-friendly technology. Join me as I dive into the world of software and strive to make tech both innovative and accessible!`}
+            {`As a recent Computer Science graduate from UCR, passionate about developing user-friendly technology. Join me as I dive into the world of software and strive to make tech both innovative and accessible!`}
           </p>
           <div className={styles.iconContainer2}>
             <a
