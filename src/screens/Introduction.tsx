@@ -55,7 +55,7 @@ export default function Introduction() {
         }
       } else {
         if (size.width > 1280) {
-          setTopSize("20%");
+          setTopSize("22%");
         } else {
           setTopSize("32%");
         }

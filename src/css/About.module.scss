@@ -19,10 +19,23 @@
   }
 }
 .imageContainer {
+  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 10%;
+  height: 20rem;
+  border: 2px solid blue;
+  clip-path: circle(38% at 50% 70%);
+  // align-self: center;
+}
+.imageStyle {
+  position: absolute;
+  // top: "50%";
+  // left: 0;
+
+  width: 100%;
+  height: fit-content;
+  // height: %;
 }
 .contentContainer {
   display: flex;

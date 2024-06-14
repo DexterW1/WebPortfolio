@@ -2,7 +2,7 @@
 import React from "react";
 import styles from "@/css/About.module.scss";
 import Image from "next/image";
-import Coder from "../../public/images/coder.svg";
+import ProfileImg from "../../public/images/IMG_1749.jpg";
 export default function About() {
   return (
     <div className={styles.container}>
@@ -15,11 +15,12 @@ export default function About() {
       <div className={styles.contentContainer}>
         <div className={styles.imageContainer}>
           <Image
-            src={Coder}
+            src={ProfileImg}
             alt="profile img"
             width={0}
             height={0}
             sizes="100vw"
+            className={styles.imageStyle}
           />
         </div>
         <div className={styles.textContainer}>
