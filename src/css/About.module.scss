@@ -19,27 +19,26 @@
   }
 }
 .imageContainer {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 20rem;
-  border: 2px solid blue;
-  clip-path: circle(38% at 50% 70%);
-  // align-self: center;
+  justify-content: center;
+  border: 5px solid $primary-500;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10%;
 }
 .imageStyle {
-  position: absolute;
-  // top: "50%";
-  // left: 0;
-
   width: 100%;
-  height: fit-content;
-  // height: %;
+  height: 100%;
+  object-fit: cover;
 }
 .contentContainer {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .textContainer {
   display: flex;
@@ -54,9 +53,21 @@
 }
 
 @media (min-width: $md) {
+  .imageContainer {
+    position: relative;
+    top: 3rem;
+    width: 350px;
+    height: 350px;
+  }
+  .headerContainer {
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
   .contentContainer {
     flex-direction: row;
-    gap: 2rem;
+    align-items: flex-end;
+    // gap: 2rem;
     justify-content: space-between;
   }
   .textContainer {
@@ -64,13 +75,24 @@
   }
 }
 @media (min-width: $xl) {
+  .headerContainer {
+    h1 {
+      font-size: 3rem;
+    }
+  }
   .container {
     padding: 5% 15%;
   }
   .contentContainer {
+    // border: 1px solid red;
+    align-items: center;
     gap: 2rem;
     .textContainer {
-      border: 1px solid pink;
+      // border: 1px solid pink;
     }
+  }
+  .imageContainer {
+    width: 400px;
+    height: 400px;
   }
 }

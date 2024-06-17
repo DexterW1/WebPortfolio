@@ -26,26 +26,27 @@ export default function About() {
         <div className={styles.textContainer}>
           <p>
             I started learning front-end development just before graduating,
-            which quickly turned into a passion for web development. This
-            journey led me to explore and learn various frameworks and
+            which quickly turned into a passion for web and mobile development.
+            This journey led me to explore and learn various frameworks and
             technologies, expanding my skills along the way.
           </p>
           <p>
-            Fast-forward to today, I&apos;m currently working as a full stack
-            developer at Nutripair. Our mission is to help people find the best
-            food for their dietary needs while simultaneously helping local
-            restaurants increase revenue and attract diverse customers. My main
-            focus is on creating robust, user-friendly applications.
-          </p>
-          <p>
-            I have a particular passion for crafting animations and visually
-            satisfying components, thriving at the intersection of design and
-            engineering to build solutions that are both beautiful and
-            functional.
+            Fast-forward to today, I&apos;m currently working as a{" "}
+            <span style={{ fontWeight: "bold", color: "white" }}>
+              full stack developer
+            </span>{" "}
+            at{" "}
+            <span style={{ fontWeight: "bold", color: "white" }}>
+              Nutripair
+            </span>
+            . Our mission is to help people find the best food for their dietary
+            needs while simultaneously helping local restaurants increase
+            revenue and attract diverse customers.
           </p>
           <p>
             When I&apos;m not at the computer, I&apos;m usually playing with my
-            cat, shooting hoops, or spending time outdoors enjoying nature.
+            cat, shooting hoops, or spending time outdoors enjoying nature. Come
+            checkout the work i&apos;m currently doing!
           </p>
           {/* <p>
             I started learning front-end development just before graduating,

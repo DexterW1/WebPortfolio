@@ -5,6 +5,7 @@ import Introduction from "@/screens/Introduction";
 import Skills from "@/screens/Skills";
 import Projects from "@/screens/Projects";
 import About from "@/screens/About";
+import Contact from "@/screens/Contact";
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -12,6 +13,7 @@ export default function Home() {
       <About />
       <Skills />
       <Projects />
+      <Contact />
     </div>
   );
 }
