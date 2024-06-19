@@ -59,8 +59,8 @@ export default function Contact() {
     <div className={styles.container}>
       <div className={styles.card}>
         <div className={styles.header}>
-          <h2>Lets Have a Chat </h2>
-          <MdWavingHand size={30} />
+          <h2>Lets Have a Chat!</h2>
+          <MdWavingHand size={30} color={"#a688fa"} />
         </div>
         <form className={styles.content} ref={form} onSubmit={sendEmail}>
           {/* <label>Name</label> */}

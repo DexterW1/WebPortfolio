@@ -72,7 +72,7 @@
 
 @media (min-width: $md) {
   .content {
-    width: 25rem;
+    max-width: 25rem;
   }
 }
 @media (min-width: $xl) {
