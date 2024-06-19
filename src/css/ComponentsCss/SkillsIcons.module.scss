@@ -1,11 +1,18 @@
 @import "../variables.scss";
 .container {
   display: flex;
+  // flex-direction: column;
   align-items: center;
-  padding: 0 4%;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 10px;
+  // gap: 30px;
   // border: 1px solid blue;
+}
+.chip {
+  background-color: $surface-200;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
 }
 .buttonContainer {
   position: relative;
@@ -17,9 +24,6 @@
   border-radius: 100%;
   background-color: $surface-300;
   margin-inline: auto; /* Horizontally center the container */
-}
-.iconContainer {
-  // border: 1px solid red;
 }
 .namesContainer {
   font-weight: 400;
@@ -38,9 +42,10 @@
 
 @media (min-width: $md) {
   .container {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    // border: 1px solid green;
-    // width: 100%;
+    max-width: $md;
+  }
+  .chip {
+    padding: 0.8rem 1.5rem;
+    font-size: 18px;
   }
 }

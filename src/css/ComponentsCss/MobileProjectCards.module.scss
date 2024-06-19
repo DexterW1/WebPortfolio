@@ -2,7 +2,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  border-radius: 20px;
+  border-radius: 15px;
   border: 1px solid $surface-200;
 }
 .imageContainer {
@@ -16,8 +16,8 @@
     height: 100%;
     object-fit: cover;
     // border-radius: 20px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
   }
 }
 .titleContainer {

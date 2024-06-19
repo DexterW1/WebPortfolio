@@ -18,11 +18,11 @@ type iconProp = {
   [key: string]: JSX.Element;
 };
 const iconComponents: iconProp = {
-  Html: <FaHtml5 size={55} color="#dd4b26" />,
-  Css: <FaCss3Alt size={55} color="#2965f1" />,
+  HTML: <FaHtml5 size={55} color="#dd4b26" />,
+  CSS: <FaCss3Alt size={55} color="#2965f1" />,
   Sass: <FaSass size={55} color="#cc6699" />,
-  Javascript: <IoLogoJavascript size={55} color="#f0db4f" />,
-  Typescript: <SiTypescript size={50} color="#007acc" />,
+  JavaScript: <IoLogoJavascript size={55} color="#f0db4f" />,
+  TypeScript: <SiTypescript size={50} color="#007acc" />,
   React: <FaReact size={55} color="#61dafb" />,
   "React-Native": <TbBrandReactNative size={55} color="#61dafb" />,
   Nodejs: <Image src={NodeIcon} width={55} height={55} alt="nodejs icon" />,
@@ -32,10 +32,10 @@ const iconComponents: iconProp = {
   aws: <Image src={AwsIcon} width={55} height={40} alt="aws icon" />,
   Framer: <SiFramer size={55} color="#00aaff" />,
   Figma: <Image src={FigmaIcon} width={55} height={55} alt="figma icon" />,
-  Github: <FaGithub size={55} color="#000" />,
-  Postgresql: <BiLogoPostgresql size={55} color="#31648c" />,
-  Nextjs: <TbBrandNextjs size={55} color="#000" />,
-  Expressjs: <SiExpress size={55} color="#000" />,
+  GitHub: <FaGithub size={55} color="#000" />,
+  PostgreSQL: <BiLogoPostgresql size={55} color="#31648c" />,
+  Next: <TbBrandNextjs size={55} color="#000" />,
+  Express: <SiExpress size={55} color="#000" />,
 };
 export default function SkillsIcons() {
   const [activeIcon, setActiveIcon] = useState("");
@@ -46,6 +46,15 @@ export default function SkillsIcons() {
   return (
     <div className={styles.container}>
       {Object.entries(iconComponents).map((item) => (
+        <div className={styles.chip} key={item[0]}>
+          {item[0]}
+        </div>
+      ))}
+    </div>
+  );
+}
+{
+  /* {Object.entries(iconComponents).map((item) => (
         <div
           onClick={() => handlePress(item[0])}
           key={item[0]}
@@ -81,38 +90,5 @@ export default function SkillsIcons() {
             {item[0]}
           </motion.div>
         </div>
-      ))}
-    </div>
-  );
+      ))} */
 }
-
-//  {
-//    Object.keys(iconComponents).map((name) => (
-//      <div
-//        // onClick={() => handlePress(name)}
-//        key={name}
-//        className={styles.iconContainer}
-//      >
-//        {activeIcon === name ? (
-//          <motion.div
-//            onClick={() => handlePress(name)}
-//            initial={{ clipPath: "circle(0%)" }}
-//            animate={{ clipPath: "circle(80%)" }}
-//            transition={{ duration: 1 }}
-//          >
-//            {name}
-//          </motion.div>
-//        ) : (
-//          <motion.div
-//            onClick={() => handlePress(name)}
-//            animate={{
-//              clipPath: activeIcon === name ? "circle(0%)" : "circle(80%",
-//            }}
-//            transition={{ duration: 1 }}
-//          >
-//            {iconComponents[name]}
-//          </motion.div>
-//        )}
-//      </div>
-//    ));
-//  }

@@ -37,13 +37,13 @@
     width: 100%;
     transition: transform 0.3s ease;
     &.active:nth-child(1) {
-      transform: translateY(7.3px) rotate(45deg);
+      transform: translateY(9.4px) rotate(45deg);
     }
     &.active:nth-child(2) {
       opacity: 0;
     }
     &.active:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
+      transform: translateY(-9.3px) rotate(-45deg);
     }
   }
 }
