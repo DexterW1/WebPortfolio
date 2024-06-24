@@ -9,6 +9,7 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { useWindowSize } from "@uidotdev/usehooks";
 import WaterDropGrid from "@/components/WaterDropGrid";
+import Spline from "@splinetool/react-spline";
 
 export default function Introduction() {
   const size = useWindowSize();
@@ -65,7 +66,10 @@ export default function Introduction() {
   return (
     <div className={styles.container}>
       <div className={styles.flexContainer}>
-        <div className={styles.imageContainer}>
+        <div className={styles.splineContainer}>
+          <Spline scene="https://prod.spline.design/6Af4kiMPIoeRAH72/scene.splinecode" />
+        </div>
+        {/* <div className={styles.imageContainer}>
           <Image
             sizes="100vw"
             width={0}
@@ -77,7 +81,7 @@ export default function Introduction() {
               height: "100%",
             }}
           />
-        </div>
+        </div> */}
         {/* Text container */}
         <div className={styles.textContainer}>
           <h3>hi, my name is</h3>
@@ -115,9 +119,9 @@ export default function Introduction() {
               <IoMdMail size={30} color="black" />
             </a>
           </div>
-          <div style={{ top: topSize }} className={styles.waterContainer}>
+          {/* <div style={{ top: topSize }} className={styles.waterContainer}>
             <WaterDropGrid />
-          </div>
+          </div> */}
         </div>
       </div>
       {/* Svg Image contianer */}

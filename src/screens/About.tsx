@@ -10,7 +10,6 @@ export default function About() {
         <h1>
           About <span>Me</span>
         </h1>
-        {/* <div className={styles.divider} /> */}
       </div>
       <div className={styles.contentContainer}>
         <div className={styles.imageContainer}>

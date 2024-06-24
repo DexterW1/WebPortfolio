@@ -1,8 +1,10 @@
 @import "./variables.scss";
 .container {
-  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  min-height: 80svh;
   height: 100%;
-  padding: 5% 5%;
+  padding: 10% 5%;
   // border: 1px solid red;
   overflow: hidden;
 }
@@ -53,11 +55,15 @@
 }
 
 @media (min-width: $md) {
+  .container {
+    padding: 5% 10%;
+  }
   .imageContainer {
     position: relative;
     top: 3rem;
-    width: 325px;
-    height: 325px;
+    width: 300px;
+    height: 300px;
+    margin-right: 10%;
   }
   .headerContainer {
     h1 {
@@ -66,33 +72,34 @@
   }
   .contentContainer {
     flex-direction: row;
-    align-items: flex-end;
+    // justify-content: space-between;
+    // border: 1px solid red;
+    // width;
+    // align-items: flex-end;
     // gap: 2rem;
-    justify-content: space-between;
+    // justify-content: space-between;
   }
   .textContainer {
     max-width: 50%;
   }
 }
 @media (min-width: $xl) {
-  // .headerContainer {
-  //   h1 {
-  //     font-size: 3rem;
-  //   }
-  // }
   .container {
-    padding: 5% 15%;
+    padding: 5% 18%;
   }
   .contentContainer {
     // border: 1px solid red;
+    // width: 90%;
+    // justify-content: space-between;
+    // gap:;
     align-items: center;
-    gap: 2rem;
+    // gap: 8rem;
     .textContainer {
-      // border: 1px solid pink;
+      // padding-right: 8rem;
     }
   }
   .imageContainer {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
   }
 }
