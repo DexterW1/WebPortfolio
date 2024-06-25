@@ -21,7 +21,7 @@ const COLORS = ["#5e43f3", "#7a5af5", "#9171f8", "#a688fa", "#ba9ffb"];
 
 export default function Introduction() {
   const bgColor = useMotionValue(COLORS[0]);
-  const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #121212 50%, ${bgColor})`;
+  const backgroundImage = useMotionTemplate`radial-gradient(130% 130% at 50% 0%, #121212 50%, ${bgColor})`;
   const names = ["Front-end Developer", "Full-stack Developer"];
   const namesIndex = useMotionValue(0);
   const baseName = useTransform(namesIndex, (latest) => names[latest] || "");

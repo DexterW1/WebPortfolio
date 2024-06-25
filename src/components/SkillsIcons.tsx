@@ -17,6 +17,20 @@ import FigmaIcon from "../../public/images/figma.svg";
 type iconProp = {
   [key: string]: JSX.Element;
 };
+
+const fadeInAnimationsVariants = {
+  intital: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.05 * index,
+    },
+  }),
+};
 const iconComponents: iconProp = {
   HTML: <FaHtml5 size={55} color="#dd4b26" />,
   CSS: <FaCss3Alt size={55} color="#2965f1" />,
@@ -42,12 +56,20 @@ const iconComponents: iconProp = {
 };
 export default function SkillsIcons() {
   return (
-    <div className={styles.container}>
-      {Object.entries(iconComponents).map((item) => (
-        <div className={styles.chip} key={item[0]}>
+    <ul className={styles.container}>
+      {Object.entries(iconComponents).map((item, index) => (
+        <motion.li
+          variants={fadeInAnimationsVariants}
+          initial="intital"
+          whileInView={"animate"}
+          viewport={{ once: true }}
+          custom={index}
+          className={styles.chip}
+          key={item[0]}
+        >
           {item[0]}
-        </div>
+        </motion.li>
       ))}
-    </div>
+    </ul>
   );
 }
