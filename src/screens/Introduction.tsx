@@ -9,25 +9,19 @@ import {
   useTransform,
   useMotionTemplate,
 } from "framer-motion";
+import { Canvas } from "@react-three/fiber";
+import { Stars } from "@react-three/drei";
 import CursorBlinking from "@/components/CursorBlinking";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
-import { useWindowSize } from "@uidotdev/usehooks";
-import WaterDropGrid from "@/components/WaterDropGrid";
-import Spline from "@splinetool/react-spline";
-import anime from "animejs";
 
-const COLORS = ["#9171f8", "#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
+import Spline from "@splinetool/react-spline";
+
+const COLORS = ["#5e43f3", "#7a5af5", "#9171f8", "#a688fa", "#ba9ffb"];
 
 export default function Introduction() {
-  const color = useMotionValue(COLORS[0]);
-  const backgroundImage = useMotionTemplate`background-image: radial-gradient(
-      125% 125% at 50% 0%,
-      #121212 50%,
-      ${color}
-    );`;
-  const size = useWindowSize();
-  const [topSize, setTopSize] = useState("20%");
+  const bgColor = useMotionValue(COLORS[0]);
+  const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #121212 50%, ${bgColor})`;
   const names = ["Front-end Developer", "Full-stack Developer"];
   const namesIndex = useMotionValue(0);
   const baseName = useTransform(namesIndex, (latest) => names[latest] || "");
@@ -37,6 +31,14 @@ export default function Introduction() {
     baseName.get().slice(0, latest)
   );
   const updatedThisRound = useMotionValue(true);
+  useEffect(() => {
+    animate(bgColor, COLORS, {
+      ease: "easeInOut",
+      duration: 10,
+      repeat: Infinity,
+      repeatType: "mirror",
+    });
+  }, []);
   useEffect(() => {
     const controls = animate(count, 25, {
       type: "tween",
@@ -60,33 +62,13 @@ export default function Introduction() {
     });
     return controls.stop;
   }, []);
-  useEffect(() => {
-    animate(color, COLORS, {
-      ease: "easeInOut",
-      duration: 10,
-      repeat: Infinity,
-      repeatType: "mirror",
-    });
-  }, []);
-  // useEffect(() => {
-  //   if (size.height) {
-  //     if (size.height < 800) {
-  //       if (size.width > 1280) {
-  //         setTopSize("15%");
-  //       } else {
-  //         setTopSize("20%");
-  //       }
-  //     } else {
-  //       if (size.width > 1280) {
-  //         setTopSize("22%");
-  //       } else {
-  //         setTopSize("32%");
-  //       }
-  //     }
-  //   }
-  // }, [size.height, size.width]);
   return (
-    <motion.div style={{ backgroundImage }} className={styles.container}>
+    <motion.section style={{ backgroundImage }} className={styles.container}>
+      <div className={styles.stars}>
+        <Canvas>
+          <Stars radius={50} count={2500} factor={4} fade speed={2} />
+        </Canvas>
+      </div>
       <div className={styles.flexContainer}>
         <div className={styles.splineContainer}>
           <Spline scene="https://prod.spline.design/6Af4kiMPIoeRAH72/scene.splinecode" />
@@ -147,7 +129,6 @@ export default function Introduction() {
         </div>
       </div>
       {/* Svg Image contianer */}
-
       {/* Button container */}
       <div className={styles.iconContainer}>
         <a
@@ -172,6 +153,6 @@ export default function Introduction() {
           <IoMdMail size={30} color="black" />
         </a>
       </div>
-    </motion.div>
+    </motion.section>
   );
 }
