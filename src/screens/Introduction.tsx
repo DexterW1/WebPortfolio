@@ -1,17 +1,31 @@
-"use client";
 import React, { useEffect, useState } from "react";
 import styles from "@/css/Introduction.module.scss";
 import Coder from "../../public/images/coder.svg";
 import Image from "next/image";
-import { motion, useMotionValue, animate, useTransform } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  animate,
+  useTransform,
+  useMotionTemplate,
+} from "framer-motion";
 import CursorBlinking from "@/components/CursorBlinking";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { useWindowSize } from "@uidotdev/usehooks";
 import WaterDropGrid from "@/components/WaterDropGrid";
 import Spline from "@splinetool/react-spline";
+import anime from "animejs";
+
+const COLORS = ["#9171f8", "#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
 export default function Introduction() {
+  const color = useMotionValue(COLORS[0]);
+  const backgroundImage = useMotionTemplate`background-image: radial-gradient(
+      125% 125% at 50% 0%,
+      #121212 50%,
+      ${color}
+    );`;
   const size = useWindowSize();
   const [topSize, setTopSize] = useState("20%");
   const names = ["Front-end Developer", "Full-stack Developer"];
@@ -47,24 +61,32 @@ export default function Introduction() {
     return controls.stop;
   }, []);
   useEffect(() => {
-    if (size.height) {
-      if (size.height < 800) {
-        if (size.width > 1280) {
-          setTopSize("15%");
-        } else {
-          setTopSize("20%");
-        }
-      } else {
-        if (size.width > 1280) {
-          setTopSize("22%");
-        } else {
-          setTopSize("32%");
-        }
-      }
-    }
-  }, [size.height, size.width]);
+    animate(color, COLORS, {
+      ease: "easeInOut",
+      duration: 10,
+      repeat: Infinity,
+      repeatType: "mirror",
+    });
+  }, []);
+  // useEffect(() => {
+  //   if (size.height) {
+  //     if (size.height < 800) {
+  //       if (size.width > 1280) {
+  //         setTopSize("15%");
+  //       } else {
+  //         setTopSize("20%");
+  //       }
+  //     } else {
+  //       if (size.width > 1280) {
+  //         setTopSize("22%");
+  //       } else {
+  //         setTopSize("32%");
+  //       }
+  //     }
+  //   }
+  // }, [size.height, size.width]);
   return (
-    <div className={styles.container}>
+    <motion.div style={{ backgroundImage }} className={styles.container}>
       <div className={styles.flexContainer}>
         <div className={styles.splineContainer}>
           <Spline scene="https://prod.spline.design/6Af4kiMPIoeRAH72/scene.splinecode" />
@@ -150,6 +172,6 @@ export default function Introduction() {
           <IoMdMail size={30} color="black" />
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 }

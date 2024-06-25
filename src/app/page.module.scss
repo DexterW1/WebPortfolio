@@ -1,8 +1,17 @@
+@import "../css/variables.scss";
 .container {
   display: flex;
   flex-direction: column;
   height: 100%;
+  // background-image: radial-gradient(
+  //   circle 35rem at var(--x) var(--y, 50%),
+  //   #5e43f3 0%,
+  //   transparent 100%
+  // );
+  // border: 1px solid blue;
 }
 .testContainer {
   border: 1px solid green;
+}
+@media (min-width: $md) {
 }
