@@ -35,6 +35,7 @@ const iconComponents: iconProp = {
   HTML: <FaHtml5 size={55} color="#dd4b26" />,
   CSS: <FaCss3Alt size={55} color="#2965f1" />,
   Sass: <FaSass size={55} color="#cc6699" />,
+  "Tailwind CSS": <FaCss3Alt size={55} color="#2965f1" />,
   JavaScript: <IoLogoJavascript size={55} color="#f0db4f" />,
   TypeScript: <SiTypescript size={50} color="#007acc" />,
   React: <FaReact size={55} color="#61dafb" />,
@@ -47,12 +48,13 @@ const iconComponents: iconProp = {
   "AWS Lambda": <Image src={AwsIcon} width={55} height={40} alt="aws icon" />,
   "AWS S3": <Image src={AwsIcon} width={55} height={40} alt="aws icon" />,
   "AWS RDS": <Image src={AwsIcon} width={55} height={40} alt="aws icon" />,
-  Framer: <SiFramer size={55} color="#00aaff" />,
+  "Framer Motion": <SiFramer size={55} color="#00aaff" />,
   Figma: <Image src={FigmaIcon} width={55} height={55} alt="figma icon" />,
   GitHub: <FaGithub size={55} color="#000" />,
   PostgreSQL: <BiLogoPostgresql size={55} color="#31648c" />,
   Next: <TbBrandNextjs size={55} color="#000" />,
   Express: <SiExpress size={55} color="#000" />,
+  Zustand: <SiExpress size={55} color="#000" />,
 };
 export default function SkillsIcons() {
   return (

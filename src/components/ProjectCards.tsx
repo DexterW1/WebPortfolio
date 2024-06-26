@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "@/css/ComponentsCss/ProjectCards.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+import { useScroll, motion, useTransform } from "framer-motion";
 import newTab from "../../public/images/newtab.png";
 type dataItemProp = {
   title: string;
@@ -17,8 +18,19 @@ type dataProp = {
   hrefLink: string;
 };
 export default function ProjectCards({ data, index, hrefLink }: dataProp) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "1.33 1"],
+  });
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
   return (
-    <div className={styles.container}>
+    <motion.div
+      style={{ scale: scaleProgress, opacity: opacityProgress }}
+      ref={ref}
+      className={styles.container}
+    >
       <div className={styles.imageContainer}>
         <Image
           sizes="100vw"
@@ -49,7 +61,7 @@ export default function ProjectCards({ data, index, hrefLink }: dataProp) {
           <p>{data.summary}</p>
         </div>
       </Link>
-    </div>
+    </motion.div>
     // </div>
   );
 }

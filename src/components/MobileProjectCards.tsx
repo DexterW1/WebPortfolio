@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import styles from "@/css/ComponentsCss/MobileProjectCards.module.scss";
 import Image from "next/image";
+import { useTransform, useScroll, motion } from "framer-motion";
 import newTab from "../../public/images/newtab.png";
 type dataItemProp = {
   title: string;
@@ -16,8 +17,19 @@ type dataProp = {
   index: number;
 };
 export default function MobileProjectCards({ data, index }: dataProp) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "1.33 1"],
+  });
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   return (
-    <div className={styles.container}>
+    <motion.div
+      style={{ scale: scaleProgress, opacity: opacityProgress }}
+      ref={ref}
+      className={styles.container}
+    >
       <div className={styles.imageContainer}>
         <Image
           src={data.imgSrc}
@@ -38,6 +50,6 @@ export default function MobileProjectCards({ data, index }: dataProp) {
           <p>{data.summary}</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
