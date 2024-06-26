@@ -3,13 +3,16 @@ import React from "react";
 import styles from "@/css/About.module.scss";
 import Image from "next/image";
 import ProfileImg from "../../public/images/IMG_1749.jpg";
+import Reveal from "@/components/Reveal";
 export default function About() {
   return (
     <div className={styles.container}>
       <div className={styles.headerContainer}>
-        <h1>
-          About <span>Me</span>
-        </h1>
+        <Reveal>
+          <h1>
+            About <span>Me</span>
+          </h1>
+        </Reveal>
       </div>
       <div className={styles.contentContainer}>
         <div className={styles.imageContainer}>
@@ -23,30 +26,37 @@ export default function About() {
           />
         </div>
         <div className={styles.textContainer}>
-          <p>
-            I started learning front-end development just before graduating,
-            which quickly turned into a passion for web and mobile development.
-            This journey led me to explore and learn various frameworks and
-            technologies, expanding my skills along the way.
-          </p>
-          <p>
-            Fast-forward to today, I&apos;m currently working as a{" "}
-            <span style={{ fontWeight: "bold", color: "white" }}>
-              full stack developer
-            </span>{" "}
-            at{" "}
-            <span style={{ fontWeight: "bold", color: "white" }}>
-              Nutripair
-            </span>
-            . Our mission is to help people find the best food for their dietary
-            needs while simultaneously helping local restaurants increase
-            revenue and attract diverse customers.
-          </p>
-          <p>
-            When I&apos;m not at the computer, I&apos;m usually playing with my
-            cat, shooting hoops, or spending time outdoors enjoying nature. Come
-            checkout the work i&apos;m currently doing!
-          </p>
+          <Reveal>
+            <p>
+              I started learning front-end development just before graduating,
+              which quickly turned into a passion for web and mobile
+              development. This journey led me to explore and learn various
+              frameworks and technologies, expanding my skills along the way.
+            </p>
+          </Reveal>
+          <Reveal>
+            <p>
+              Fast-forward to today, I&apos;m currently working as a{" "}
+              <span style={{ fontWeight: "bold", color: "white" }}>
+                full stack developer
+              </span>{" "}
+              at{" "}
+              <span style={{ fontWeight: "bold", color: "white" }}>
+                Nutripair
+              </span>
+              . Our mission is to help people find the best food for their
+              dietary needs while simultaneously helping local restaurants
+              increase revenue and attract diverse customers.
+            </p>
+          </Reveal>
+          <Reveal>
+            {" "}
+            <p>
+              When I&apos;m not at the computer, I&apos;m usually playing with
+              my cat, shooting hoops, or spending time outdoors enjoying nature.
+              Come checkout the work i&apos;m currently doing!
+            </p>
+          </Reveal>
           {/* <p>
             I started learning front-end development just before graduating,
             which quickly turned into a passion for web development. This
