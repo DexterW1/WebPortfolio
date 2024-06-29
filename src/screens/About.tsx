@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import styles from "@/css/About.module.scss";
 import Image from "next/image";
@@ -8,11 +7,9 @@ export default function About() {
   return (
     <div className={styles.container}>
       <div className={styles.headerContainer}>
-        <Reveal>
-          <h1>
-            About <span>Me</span>
-          </h1>
-        </Reveal>
+        <h1>
+          About <span>Me</span>
+        </h1>
       </div>
       <div className={styles.contentContainer}>
         <div className={styles.imageContainer}>
@@ -26,7 +23,7 @@ export default function About() {
           />
         </div>
         <div className={styles.textContainer}>
-          <Reveal>
+          <Reveal id="about_p1">
             <p>
               I started learning front-end development just before graduating,
               which quickly turned into a passion for web and mobile
@@ -34,7 +31,7 @@ export default function About() {
               frameworks and technologies, expanding my skills along the way.
             </p>
           </Reveal>
-          <Reveal>
+          <Reveal id="about_p2">
             <p>
               Fast-forward to today, I&apos;m currently working as a{" "}
               <span style={{ fontWeight: "bold", color: "white" }}>
@@ -49,8 +46,7 @@ export default function About() {
               increase revenue and attract diverse customers.
             </p>
           </Reveal>
-          <Reveal>
-            {" "}
+          <Reveal id="about_p3">
             <p>
               When I&apos;m not at the computer, I&apos;m usually playing with
               my cat, shooting hoops, or spending time outdoors enjoying nature.

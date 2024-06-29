@@ -32,6 +32,7 @@ export default function Introduction() {
     baseName.get().slice(0, latest)
   );
   const updatedThisRound = useMotionValue(true);
+  const [splineLoading, setSplineLoading] = useState(true);
   useEffect(() => {
     animate(bgColor, COLORS, {
       ease: "easeInOut",
@@ -72,7 +73,10 @@ export default function Introduction() {
       </div>
       <div className={styles.flexContainer}>
         <div className={styles.splineContainer}>
-          <Spline scene="https://prod.spline.design/6Af4kiMPIoeRAH72/scene.splinecode" />
+          <Spline
+            onLoad={() => setSplineLoading(false)}
+            scene="https://prod.spline.design/6Af4kiMPIoeRAH72/scene.splinecode"
+          />
         </div>
         {/* <div className={styles.imageContainer}>
           <Image

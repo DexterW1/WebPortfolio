@@ -1,24 +1,45 @@
 import React, { useRef, useEffect } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
+import { useAnimationStore } from "@/store/animationeStore";
 
 type RevealProps = {
   children: React.ReactNode;
   width?: "fit-content" | "100%";
+  id: string; // Add an ID prop
 };
+
 export default function Reveal({
   children,
   width = "fit-content",
+  id,
 }: RevealProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const maincontrols = useAnimation();
   const slidecontrols = useAnimation();
+  const { revealedElements, markAsRevealed } = useAnimationStore();
+  console.log(revealedElements);
   useEffect(() => {
-    if (isInView) {
-      maincontrols.start("visibile");
-      slidecontrols.start("visibile");
+    if (isInView && !revealedElements[id]) {
+      maincontrols.start("visible").then(() => {
+        markAsRevealed(id);
+      });
+      slidecontrols.start("visible");
+      // markAsRevealed(id);
     }
-  }, [isInView]);
+  }, [
+    isInView,
+    revealedElements,
+    id,
+    maincontrols,
+    slidecontrols,
+    markAsRevealed,
+  ]);
+
+  if (revealedElements[id]) {
+    return <div style={{ width }}>{children}</div>;
+  }
+
   return (
     <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
       <motion.div
@@ -27,7 +48,7 @@ export default function Reveal({
             opacity: 0,
             y: 75,
           },
-          visibile: { opacity: 1, y: 0 },
+          visible: { opacity: 1, y: 0 },
         }}
         initial="hidden"
         animate={maincontrols}
@@ -38,7 +59,7 @@ export default function Reveal({
       <motion.div
         variants={{
           hidden: { left: 0 },
-          visibile: { left: "100%" },
+          visible: { left: "100%" },
         }}
         initial="hidden"
         animate={slidecontrols}
