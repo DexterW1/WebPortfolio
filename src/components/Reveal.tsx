@@ -25,7 +25,6 @@ export default function Reveal({
         markAsRevealed(id);
       });
       slidecontrols.start("visible");
-      // markAsRevealed(id);
     }
   }, [
     isInView,

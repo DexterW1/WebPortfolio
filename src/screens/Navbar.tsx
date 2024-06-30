@@ -3,13 +3,14 @@ import React, { useState } from "react";
 import { MdOutlineFileDownload } from "react-icons/md";
 import styles from "@/css/Navbar.module.scss";
 import Link from "next/link";
-
+import useScrollStore from "@/store/scrollStore";
 import { motion } from "framer-motion";
 export function NavbarMobile() {
   const [pressed, setPressed] = useState(false);
   const handlePressed = () => {
     setPressed(!pressed);
   };
+  const scrollToSection = useScrollStore((state) => state.scrollToSection);
   return (
     <div className={styles.container}>
       <div className={styles.headerContainer}>
@@ -31,11 +32,10 @@ export function NavbarMobile() {
           transition={{ type: "tween", duration: 0.4 }} // Adjust spring animation properties as needed
         >
           <ul>
-            <li>About Me</li>
-            <li>Skills</li>
-            <li>Projects</li>
-            <li>Experience</li>
-            <li>Contact Me</li>
+            <li onClick={() => scrollToSection("about")}>About Me</li>
+            <li onClick={() => scrollToSection("skills")}>Skills</li>
+            <li onClick={() => scrollToSection("projects")}>Projects</li>
+            <li onClick={() => scrollToSection("contact")}>Contact Me</li>
           </ul>
         </motion.div>
       </div>
@@ -44,6 +44,7 @@ export function NavbarMobile() {
 }
 export function NavbarFull() {
   const [pressed, setPressed] = useState(false);
+  const scrollToSection = useScrollStore((state) => state.scrollToSection);
   const handlePressed = () => {
     setPressed(!pressed);
   };
@@ -54,16 +55,16 @@ export function NavbarFull() {
           <h1>YW.</h1>
         </Link>
         <div className={styles.fullContentContainer}>
-          <Link href="/" replace>
+          <Link onClick={() => scrollToSection("about")} href="/" replace>
             <p>About Me</p>
           </Link>
-          <Link href="/" replace>
+          <Link onClick={() => scrollToSection("skills")} href="/" replace>
             <p>Skills</p>
           </Link>
-          <Link href="/" replace>
+          <Link onClick={() => scrollToSection("projects")} href="/" replace>
             <p>Projects</p>
           </Link>
-          <Link href="/" replace>
+          <Link onClick={() => scrollToSection("contact")} href="/" replace>
             <p>Contact Me</p>
           </Link>
         </div>
@@ -80,7 +81,7 @@ export function NavbarFull() {
     </div>
   );
 }
-export default function NavbarCustom() {
+export default function NavbarCustom({ scrollToSection }: any) {
   return (
     <>
       <div className={styles.navbar_mobile_container}>

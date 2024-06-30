@@ -15,6 +15,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      setTimeout(() => element.scrollIntoView({ behavior: "smooth" }), 100);
+    }
+  };
   return (
     <html lang="en">
       <body className={inter.className}>

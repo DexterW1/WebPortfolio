@@ -14,7 +14,7 @@ const linkIndex = [
 export default function Projects() {
   const projectArray = Object.values(ProjectData);
   return (
-    <div className={styles.container}>
+    <div id="projects" className={styles.container}>
       <div className={styles.headerContainer}>
         <h1>
           My <span>Projects</span>

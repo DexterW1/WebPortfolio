@@ -3,7 +3,7 @@ import styles from "@/css/Skills.module.scss";
 import SkillsIcons from "@/components/SkillsIcons";
 export default function Skills() {
   return (
-    <div className={styles.container}>
+    <div id="skills" className={styles.container}>
       <div className={styles.headerContainer}>
         <h1>
           My <span>Skills</span>

@@ -56,7 +56,7 @@ export default function Contact() {
     formData.user_name && formData.user_email && formData.message;
 
   return (
-    <div className={styles.container}>
+    <div id="contact" className={styles.container}>
       <div className={styles.card}>
         <div className={styles.header}>
           <h2>Lets Have a Chat!</h2>

@@ -5,7 +5,7 @@ import ProfileImg from "../../public/images/IMG_1749.jpg";
 import Reveal from "@/components/Reveal";
 export default function About() {
   return (
-    <div className={styles.container}>
+    <div id="about" className={styles.container}>
       <div className={styles.headerContainer}>
         <h1>
           About <span>Me</span>
