@@ -1,0 +1,20 @@
+@import "../variables.scss";
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem 5%;
+  overflow: hidden;
+  font-size: 1rem;
+  color: $surface-600;
+}
+@media (min-width: $md) {
+  .container {
+    padding: 1.5rem 10%;
+  }
+}
+@media (min-width: $xl) {
+  .container {
+    padding: 1.5rem 18%;
+  }
+}

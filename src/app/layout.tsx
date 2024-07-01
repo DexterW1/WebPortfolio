@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
 import NavbarCustom from "@/screens/Navbar";
-
+import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -15,17 +15,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      setTimeout(() => element.scrollIntoView({ behavior: "smooth" }), 100);
-    }
-  };
   return (
     <html lang="en">
       <body className={inter.className}>
         <NavbarCustom />
         {children}
+        <Footer />
       </body>
     </html>
   );
