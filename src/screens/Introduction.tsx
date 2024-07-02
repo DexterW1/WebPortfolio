@@ -103,7 +103,9 @@ export default function Introduction() {
             <CursorBlinking />
           </span>
           <p>
-            {`As a recent Computer Science graduate from UCR, passionate about developing user-friendly technology. Join me as I dive into the world of software and strive to make tech both innovative and accessible!`}
+            As a Computer Science graduate from UCR, I&apos;m dedicated to
+            creating user-friendly technology. Join me on my journey to innovate
+            and make tech accessible for everyone!
           </p>
           <div className={styles.iconContainer2}>
             <a
@@ -128,9 +130,6 @@ export default function Introduction() {
               <IoMdMail size={30} color="black" />
             </a>
           </div>
-          {/* <div style={{ top: topSize }} className={styles.waterContainer}>
-            <WaterDropGrid />
-          </div> */}
         </div>
       </div>
       {/* Svg Image contianer */}

@@ -3,6 +3,7 @@ import styles from "@/css/About.module.scss";
 import Image from "next/image";
 import ProfileImg from "../../public/images/IMG_1749.jpg";
 import Reveal from "@/components/Reveal";
+import Link from "next/link";
 export default function About() {
   return (
     <div id="about" className={styles.container}>
@@ -25,50 +26,47 @@ export default function About() {
         <div className={styles.textContainer}>
           <Reveal id="about_p1">
             <p>
-              I started learning front-end development just before graduating,
-              which quickly turned into a passion for web and mobile
-              development. This journey led me to explore and learn various
-              frameworks and technologies, expanding my skills along the way.
+              I discovered my passion for front-end development just before
+              graduating, which quickly evolved into a love for web and mobile
+              development. This journey has allowed me to dive into various
+              frameworks and technologies, continuously expanding my skill set.
             </p>
           </Reveal>
           <Reveal id="about_p2">
             <p>
-              Fast-forward to today, I&apos;m currently working as a{" "}
-              <span style={{ fontWeight: "bold", color: "white" }}>
+              Today, I work as a{" "}
+              <span
+                style={{
+                  fontWeight: "bold",
+                  color: "white",
+                }}
+              >
                 full stack developer
               </span>{" "}
               at{" "}
-              <span style={{ fontWeight: "bold", color: "white" }}>
+              <Link
+                target="_blank"
+                href={"https://www.nutripair.co/"}
+                style={{
+                  fontWeight: "bold",
+                  color: "white",
+                  textDecoration: "underline",
+                }}
+              >
                 Nutripair
-              </span>
-              . Our mission is to help people find the best food for their
-              dietary needs while simultaneously helping local restaurants
-              increase revenue and attract diverse customers.
+              </Link>
+              . Our mission is to guide people in finding the best food for
+              their dietary needs while helping local restaurants boost their
+              revenue and attract a diverse clientele.
             </p>
           </Reveal>
           <Reveal id="about_p3">
             <p>
-              When I&apos;m not at the computer, I&apos;m usually playing with
-              my cat, shooting hoops, or spending time outdoors enjoying nature.
-              Come checkout the work i&apos;m currently doing!
+              When I&apos;m not coding, you can find me playing with my cat,
+              shooting hoops, or enjoying the great outdoors. Take a look at the
+              exciting projects I&apos;m currently working on!
             </p>
           </Reveal>
-          {/* <p>
-            I started learning front-end development just before graduating,
-            which quickly turned into a passion for web development. This
-            journey led me to explore and learn various frameworks and
-            technologies, expanding my skills along the way. Fast-forward to
-            today, I'm currently working as a full stack devloper at Nutripair.
-            Our mission is to help people find the best food for their dietary
-            needs while simultaneously help local restauraunts increase revenue
-            & attrack diverse customers. My main focus is on creating robust,
-            user-friendly applications. I have a particular passion for crafting
-            animations and visually satisfying components, thriving at the
-            intersection of design and engineering to build solutions that are
-            both beautiful and functional. When I'm not at the computer, I'm
-            usually playing with my cat, shooting hoops, or spending time
-            outdoors enjoying nature.
-          </p> */}
         </div>
       </div>
     </div>
