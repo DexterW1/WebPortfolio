@@ -1,12 +1,27 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MdOutlineFileDownload } from "react-icons/md";
 import styles from "@/css/Navbar.module.scss";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import useScrollStore from "@/store/scrollStore";
 import { motion } from "framer-motion";
+import { set } from "animejs";
 export function NavbarMobile() {
   const [pressed, setPressed] = useState(false);
+  const router = useRouter();
+  const handleScroll = (id: string) => {
+    if (window.location.pathname === "/") {
+      scrollToSection(id);
+      setPressed(false);
+    } else {
+      router.push("/");
+      setTimeout(() => {
+        setPressed(false);
+        scrollToSection(id);
+      }, 500);
+    }
+  };
   const handlePressed = () => {
     setPressed(!pressed);
   };
@@ -27,15 +42,15 @@ export function NavbarMobile() {
       <div className={styles.contentContainer}>
         <motion.div
           className={styles.listContainer}
-          initial={{ y: -150, opacity: 0 }} // Initial hidden state
-          animate={{ y: pressed ? 0 : -150, opacity: pressed ? 1 : 0 }} // Animation when button is clicked
-          transition={{ type: "tween", duration: 0.4 }} // Adjust spring animation properties as needed
+          initial={{ y: -150, opacity: 0 }}
+          animate={{ y: pressed ? 0 : -150, opacity: pressed ? 1 : 0 }}
+          transition={{ type: "tween", duration: 0.4 }}
         >
           <ul>
-            <li onClick={() => scrollToSection("about")}>About Me</li>
-            <li onClick={() => scrollToSection("skills")}>Skills</li>
-            <li onClick={() => scrollToSection("projects")}>Projects</li>
-            <li onClick={() => scrollToSection("contact")}>Contact Me</li>
+            <li onClick={() => handleScroll("about")}>About Me</li>
+            <li onClick={() => handleScroll("skills")}>Skills</li>
+            <li onClick={() => handleScroll("projects")}>Projects</li>
+            <li onClick={() => handleScroll("contact")}>Contact Me</li>
           </ul>
         </motion.div>
       </div>
@@ -45,6 +60,17 @@ export function NavbarMobile() {
 export function NavbarFull() {
   const [pressed, setPressed] = useState(false);
   const scrollToSection = useScrollStore((state) => state.scrollToSection);
+  const router = useRouter();
+  const handleScroll = (id: string) => {
+    if (window.location.pathname === "/") {
+      scrollToSection(id);
+    } else {
+      router.push("/");
+      setTimeout(() => {
+        scrollToSection(id);
+      }, 500);
+    }
+  };
   const handlePressed = () => {
     setPressed(!pressed);
   };
@@ -55,16 +81,16 @@ export function NavbarFull() {
           <h1>YW.</h1>
         </Link>
         <div className={styles.fullContentContainer}>
-          <Link onClick={() => scrollToSection("about")} href="/" replace>
+          <Link onClick={() => handleScroll("about")} href="/" replace>
             <p>About Me</p>
           </Link>
-          <Link onClick={() => scrollToSection("skills")} href="/" replace>
+          <Link onClick={() => handleScroll("skills")} href="/" replace>
             <p>Skills</p>
           </Link>
-          <Link onClick={() => scrollToSection("projects")} href="/" replace>
+          <Link onClick={() => handleScroll("projects")} href="/" replace>
             <p>Projects</p>
           </Link>
-          <Link onClick={() => scrollToSection("contact")} href="/" replace>
+          <Link onClick={() => handleScroll("contact")} href="/" replace>
             <p>Contact Me</p>
           </Link>
         </div>
