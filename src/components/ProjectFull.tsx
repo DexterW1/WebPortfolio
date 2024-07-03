@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "@/css/ProjectFull.module.scss";
 import newTab from "../../public/images/newtab.png";
@@ -19,6 +19,8 @@ type projectProps = {
   summary: string;
   skills: string[];
   link?: string;
+  credits?: string;
+  creditLink?: string;
   gitlink: string;
   imgSrc: string;
   imgArr: string[];
@@ -73,6 +75,7 @@ const iconComponents: any = {
 };
 export default function ProjectFull({ data }: DataProps) {
   const [openModal, setOpenModal] = useState(false);
+  const [dataCredit, setdataCredit] = useState<React.ReactNode>(null);
   const [imageSelected, setImageSelected] = useState("");
   const handleButtonPress = (item: string) => {
     setOpenModal(true);
@@ -82,6 +85,45 @@ export default function ProjectFull({ data }: DataProps) {
     setOpenModal(false);
     setImageSelected("");
   };
+  useEffect(() => {
+    if (data.title === "Weatherio") {
+      setdataCredit(
+        <p>
+          The design of this project was heavily inspired by{" "}
+          <a
+            className={styles.creditLinkStyle}
+            href={data.creditLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            codewithsadee
+          </a>
+          . However, all the code was written independently without copying any
+          of their code. I mainly took inspiration from the design and
+          implemented it with my own code.
+        </p>
+      );
+    } else if (data.title === "Spotify Wrap") {
+      setdataCredit(
+        <p>
+          The UI design of this project was heavily inspired by Brittany
+          Chiang&apos;s{" "}
+          <a
+            className={styles.creditLinkStyle}
+            href={data.creditLink}
+            target="_blank"
+            rel="noopener no referrer"
+          >
+            Spotify Profile
+          </a>{" "}
+          project. While I drew design inspiration from her work, all the code
+          was written independently without copying any of her code.
+          Additionally, this projects analytics was also inspired by
+          Spotify&apos;s annual &apos;Wrapped&apos; feature.
+        </p>
+      );
+    }
+  }, []);
   return (
     <div className={styles.container}>
       <div className={styles.title}>
@@ -170,6 +212,12 @@ export default function ProjectFull({ data }: DataProps) {
           />
         </div>
       </Modal>
+      {data.credits && (
+        <div className={styles.creditsContainer}>
+          <h2>Credits</h2>
+          <p>{dataCredit}</p>
+        </div>
+      )}
     </div>
   );
 }

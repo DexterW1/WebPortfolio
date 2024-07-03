@@ -18,7 +18,6 @@ export default function Reveal({
   const maincontrols = useAnimation();
   const slidecontrols = useAnimation();
   const { revealedElements, markAsRevealed } = useAnimationStore();
-  console.log(revealedElements);
   useEffect(() => {
     if (isInView && !revealedElements[id]) {
       maincontrols.start("visible").then(() => {

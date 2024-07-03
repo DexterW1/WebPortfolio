@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import ProjectFull from "@/components/ProjectFull";
 import DATA from "@/assets/data.json";

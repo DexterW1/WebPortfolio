@@ -1,7 +1,7 @@
 {
   "project1": {
     "title": "Stock Viewer",
-    "summary": "A dynamic stock market platform that provides near real-time data for major indices, market news, trending stocks, and tools for search and analyzing stock data. It utilizes React and Node.js , and integrates multiple APIs for continuous data availability",
+    "summary": "A React and Node.js based platform offering near real-time data for major indices, market news, and trending stocks. ",
     "skills": ["React", "Nodejs", "Expressjs", "RestApi", "Css"],
     "link": "https://stock-page-client.vercel.app",
     "gitlink": "https://github.com/DexterW1/StockPageReactJS",
@@ -14,7 +14,7 @@
   },
   "project2": {
     "title": "Spotify Wrap",
-    "summary": "A web application with React that uses the Spotify API to give users insights into their music preferences. Users can view their favorite artists and tracks over different time periods and explore detailed audio analysis of their music.",
+    "summary": "A React website using Spotify's API to display user's top tracks, artists, and genres, while also giving some analytics on their listening habits.",
     "skills": ["React", "Nodejs", "Expressjs", "RestApi", "Css"],
     "gitlink": "https://github.com/DexterW1/SpotifyWrap",
     "imgSrc": "/images/spotifywrap1.png",
@@ -27,7 +27,7 @@
   },
   "project3": {
     "title": "Traffic Accident Analytics",
-    "summary": "A group project that analyzes 7.7 million U.S. traffic accidents from 2016-2022. The website provides insightful information through graphs highlighting accident-prone areas and visibility levels. It allows users to search for specific accidents and get detailed information about them, with an enhanced interface featuring pagination for easier data navigation.",
+    "summary": "A website that analyzes 7.7 million U.S. traffic accidents (2016-2022) with graphs highlighting accident-prone areas and visibility levels. Users can search for specific accidents and access detailed information about that accident.",
     "skills": ["React", "Nodejs", "Expressjs", "RestApi", "Css", "Bootstrap"],
     "gitlink": "https://github.com/DexterW1/Traffic-Accident-Analytics",
     "imgSrc": "/images/traffic1.png",
@@ -39,27 +39,8 @@
   },
   "project4": {
     "title": "Weatherio",
-    "summary": "A simple/modern weather app that uses plain HTML,CSS, and JavaScript. It utilizes two different weather APIs and it offers a user friendly interface.",
+    "summary": "A simple/modern weather app that uses plain HTML,CSS, and JavaScript. Utilizing two different weather APIs and a geolocation API to provide the user with the most accurate weather information.",
     "skills": ["Html", "Css", "Javascript"],
-    "link": "https://dexterw1.github.io/Weatherio/",
-    "gitlink": "https://github.com/DexterW1/Weatherio",
-    "imgSrc": "/images/weatherio.png",
-    "imgArr": ["/images/weatherio.png", "/images/weatherio2.png"]
-  },
-  "project5": {
-    "title": "Nutripair",
-    "summary": "Nutripair is the current company I am working for, our mission is to help people find the best food for their dietary needs while simultaneously helping local restauraunts increase revenue & attract diverse customers",
-    "skills": [
-      "React-Native",
-      "Typescript",
-      "Aws",
-      "Figma",
-      "Postgressql",
-      "S3",
-      "Gateway",
-      "Rds",
-      "Expo"
-    ],
     "link": "https://dexterw1.github.io/Weatherio/",
     "gitlink": "https://github.com/DexterW1/Weatherio",
     "imgSrc": "/images/weatherio.png",

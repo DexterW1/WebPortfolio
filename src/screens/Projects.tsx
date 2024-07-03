@@ -4,13 +4,7 @@ import MobileProjectCards from "@/components/MobileProjectCards";
 import ProjectCards from "@/components/ProjectCards";
 import Link from "next/link";
 import ProjectData from "@/assets/shortdata.json";
-const linkIndex = [
-  "stockhub",
-  "spotifywrap",
-  "collisioninsight",
-  "weatherio",
-  "nutripair",
-];
+const linkIndex = ["stockhub", "spotifywrap", "collisioninsight", "weatherio"];
 export default function Projects() {
   const projectArray = Object.values(ProjectData);
   return (
