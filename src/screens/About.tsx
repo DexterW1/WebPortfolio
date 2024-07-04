@@ -46,18 +46,19 @@ export default function About() {
               at{" "}
               <Link
                 target="_blank"
+                className={styles.linkStyle}
                 href={"https://www.nutripair.co/"}
-                style={{
-                  fontWeight: "bold",
-                  color: "white",
-                  textDecoration: "underline",
-                }}
               >
                 Nutripair
               </Link>
               . Our mission is to guide people in finding the best food for
               their dietary needs while helping local restaurants boost their
-              revenue and attract a diverse clientele.
+              revenue and attract a diverse clientele. Check out my work for
+              Nutripair{" "}
+              <Link href="experience/nutripair" className={styles.linkStyle}>
+                here
+              </Link>
+              .
             </p>
           </Reveal>
           <Reveal id="about_p3">

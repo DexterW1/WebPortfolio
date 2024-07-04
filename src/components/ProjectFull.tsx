@@ -14,6 +14,10 @@ import { BiLogoPostgresql } from "react-icons/bi";
 import NodeIcon from "../../public/images/Node.js_logo.svg";
 import AwsIcon from "../../public/images/aws.svg";
 import FigmaIcon from "../../public/images/figma.svg";
+import S3Icon from "../../public/images/s3.svg";
+import RdsIcon from "../../public/images/rds.svg";
+import CognitoIcon from "../../public/images/cognito.svg";
+import ZustandIcon from "../../public/images/bear.png";
 type projectProps = {
   title: string;
   summary: string;
@@ -21,7 +25,7 @@ type projectProps = {
   link?: string;
   credits?: string;
   creditLink?: string;
-  gitlink: string;
+  gitlink?: string;
   imgSrc: string;
   imgArr: string[];
 };
@@ -68,6 +72,50 @@ const iconComponents: any = {
       style={{ width: "100%" }}
     />
   ),
+  S3: (
+    <Image
+      src={S3Icon}
+      width={0}
+      height={0}
+      alt="s3 icon"
+      sizes="100vw"
+      style={{ width: "100%" }}
+    />
+  ),
+  Rds: (
+    <Image
+      src={RdsIcon}
+      width={0}
+      height={0}
+      alt="Rds icon"
+      sizes="100vw"
+      style={{ width: "100%" }}
+    />
+  ),
+  Cognito: (
+    <Image
+      src={CognitoIcon}
+      width={0}
+      height={0}
+      alt="cognito icon"
+      sizes="100vw"
+      style={{ width: "100%" }}
+    />
+  ),
+  Zustand: (
+    <Image
+      src={ZustandIcon}
+      width={0}
+      height={0}
+      alt="zustand icon"
+      sizes="100vw"
+      style={{
+        marginLeft: ".5rem",
+        width: "4.5rem",
+        height: "100%",
+      }}
+    />
+  ),
   Postgresql: <BiLogoPostgresql size="100%" color="#31648c" />,
   Expressjs: <SiExpress size="100%" color="#FFF" />,
   RestApi: <p>REST</p>,
@@ -77,6 +125,7 @@ export default function ProjectFull({ data }: DataProps) {
   const [openModal, setOpenModal] = useState(false);
   const [dataCredit, setdataCredit] = useState<React.ReactNode>(null);
   const [imageSelected, setImageSelected] = useState("");
+  const [isNutripair, setIsNutripair] = useState(false);
   const handleButtonPress = (item: string) => {
     setOpenModal(true);
     setImageSelected(item);
@@ -122,6 +171,8 @@ export default function ProjectFull({ data }: DataProps) {
           Spotify&apos;s annual &apos;Wrapped&apos; feature.
         </p>
       );
+    } else if (data.title === "Nutripair") {
+      setIsNutripair(true);
     }
   }, []);
   return (
@@ -143,15 +194,18 @@ export default function ProjectFull({ data }: DataProps) {
         </div>
       </div>
       <div className={styles.metaContainer}>
-        <a
-          href={data.gitlink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.githubButtonStyle}
-        >
-          <FaGithub size={25} color="#FFF" />
-          View on Github
-        </a>
+        {data.gitlink && (
+          <a
+            href={data.gitlink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.githubButtonStyle}
+          >
+            <FaGithub size={25} color="#FFF" />
+            View on Github
+          </a>
+        )}
+
         {data.link && (
           <a
             href={data.link}
@@ -164,32 +218,54 @@ export default function ProjectFull({ data }: DataProps) {
           </a>
         )}
       </div>
-      <div className={styles.imageContainer}>
-        {data.imgArr.map((item, index) => (
-          <button
-            style={{ cursor: "pointer" }}
-            onClick={() => handleButtonPress(item)}
-            key={index}
-          >
-            <div className={styles.imageStyle} key={index}>
-              <Image
-                loading="lazy"
-                src={item}
-                width={0}
-                height={0}
-                sizes="100vw"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: "10px",
-                  border: "1.5px solid grey",
-                }}
-                alt="Project Images"
-              />
-            </div>
-          </button>
-        ))}
-      </div>
+      {isNutripair ? (
+        <div className={styles.nutripairContainer}>
+          {data.imgArr.map((item, index) => (
+            <Image
+              key={index}
+              loading="lazy"
+              src={item}
+              width={0}
+              height={0}
+              sizes="100vw"
+              className={styles.nutripairStyle}
+              style={{
+                borderRadius: "10px",
+                border: "1.5px solid grey",
+              }}
+              alt="Project Images"
+            />
+          ))}
+        </div>
+      ) : (
+        <div className={styles.imageContainer}>
+          {data.imgArr.map((item, index) => (
+            <button
+              style={{ cursor: "pointer" }}
+              onClick={() => handleButtonPress(item)}
+              key={index}
+            >
+              <div className={styles.imageStyle} key={index}>
+                <Image
+                  loading="lazy"
+                  src={item}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    borderRadius: "10px",
+                    border: "1.5px solid grey",
+                  }}
+                  alt="Project Images"
+                />
+              </div>
+            </button>
+          ))}
+        </div>
+      )}
+
       <Modal
         open={openModal}
         onClose={handButtonClose}

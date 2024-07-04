@@ -53,6 +53,14 @@
     font-weight: 300;
   }
 }
+.linkStyle {
+  font-weight: "bold";
+  color: white;
+  text-decoration: underline;
+  &:hover {
+    color: $primary-400;
+  }
+}
 @media (min-width: $md) {
   .container {
     padding: 5% 10%;

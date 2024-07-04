@@ -1,3 +1,4 @@
+"use client";
 import React, { useRef } from "react";
 import styles from "@/css/ComponentsCss/ProjectCards.module.scss";
 import Image from "next/image";

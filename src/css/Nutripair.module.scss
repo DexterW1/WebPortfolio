@@ -15,17 +15,6 @@
   flex-direction: column;
   gap: 2rem;
 }
-.nutripairContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  // padding: 0 5%;
-  gap: 1rem;
-}
-.nutripairStyle {
-  width: 20rem;
-  height: auto;
-}
 .summaryContainer {
   p {
     color: $surface-600;
@@ -96,19 +85,11 @@
   border-radius: 40px;
   background-color: $primary-600;
 }
-@media (min-width: $md) {
-  .nutripairContainer {
-    flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: 2rem;
-    // border: 1px solid blue;
-  }
-  .nutripairStyle {
-    width: 15rem;
-  }
-}
 @media (min-width: $lg) {
   .container {
+    // justify-content: center;
+    // align-items: center;
+    // border: 1px solid blue;
     padding: 5% 18%;
   }
   .imageContainer {
